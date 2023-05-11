@@ -1,31 +1,35 @@
 //
-//  SettingsView.swift
+//  SettinsView.swift
 //  WB_Weather
 //
-//  Created by Лёха Небесный on 06.04.2023.
+//  Created by Лёха Небесный on 07.05.2023.
 //
 
 import UIKit
-
 protocol SettingsViewDelegate: AnyObject {
     func dismissController()
 }
 
-final class SettingsView: UIView {
+class SettingsView: UIView {
 
-    enum Constants {
-        static let settingCellID = "SettingCellID"
-        static let buttonCellID = "ButtonCellID"
-        static let defaultCellID = "DefaultCellID"
-    }
+    private lazy var mainLabel = UILabel()
+    private lazy var verticalStackView = UIStackView()
+    private let userDefaults = UserDefaults.standard
 
-    private lazy var tableView = UITableView(frame: .zero, style: .insetGrouped)
+    private var temperatureInFahrenheit: SwitcherButton?
+    private var windSpeedInMi: SwitcherButton?
+    private var timeFormat12: SwitcherButton?
+    private var noticeOn: SwitcherButton?
+
+    private lazy var button = UIButton()
     weak var delegate: SettingsViewDelegate?
 
     init() {
         super.init(frame: .zero)
-        self.backgroundColor = .darkGray
-        self.setupTableView()
+        self.backgroundColor = #colorLiteral(red: 0.9146655202, green: 0.9332792163, blue: 0.9809073806, alpha: 1)
+        self.setupMainLabel()
+        self.setupVerticalStack()
+        self.setupButton()
     }
 
     @available(*, unavailable)
@@ -33,67 +37,135 @@ final class SettingsView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
 
-    private func setupTableView() {
-//        self.tableView.rowHeight = UITableView.automaticDimension
-        self.tableView.estimatedRowHeight = 32
-        self.tableView.register(SettingsTableViewCell.self, forCellReuseIdentifier: Constants.settingCellID)
-        self.tableView.register(ButtonTableViewCell.self, forCellReuseIdentifier: Constants.buttonCellID)
-        self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: Constants.defaultCellID)
-        self.tableView.dataSource = self
-        self.tableView.showsVerticalScrollIndicator = false
-        self.tableView.translatesAutoresizingMaskIntoConstraints = false
-        self.tableView.backgroundColor = .clear
-        self.tableView.allowsSelection = false
+    private func setupMainLabel() {
+        self.mainLabel.translatesAutoresizingMaskIntoConstraints = false
+        self.mainLabel.clipsToBounds = true
+        self.mainLabel.textColor = .black
+        self.mainLabel.font = UIFont.systemFont(ofSize: 20, weight: .medium)
+        self.mainLabel.textAlignment = .left
+        self.mainLabel.text = "Settings"
 
-        self.addSubview(self.tableView)
+        self.addSubview(self.mainLabel)
 
         NSLayoutConstraint.activate([
-            self.tableView.centerYAnchor.constraint(equalTo: self.centerYAnchor),
-            self.tableView.heightAnchor.constraint(equalToConstant: 320),
-            self.tableView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
-            self.tableView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
+            self.mainLabel.topAnchor.constraint(equalTo: self.topAnchor, constant: 27),
+            self.mainLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 20),
         ])
+
     }
 
+    private func setupVerticalStack() {
 
-}
+        self.verticalStackView.translatesAutoresizingMaskIntoConstraints = false
+        self.verticalStackView.axis = .vertical
+        self.verticalStackView.spacing = 4
+        self.verticalStackView.distribution = .fillEqually
+        self.verticalStackView.alignment = .fill
 
-extension SettingsView: UITableViewDataSource {
+        self.addSubview(self.verticalStackView)
 
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 6
+        NSLayoutConstraint.activate([
+            self.verticalStackView.topAnchor.constraint(equalTo: self.mainLabel.bottomAnchor, constant: 20),
+            self.verticalStackView.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -93),
+            self.verticalStackView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 20),
+            self.verticalStackView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -30),
+        ])
+
+        self.setupParams()
     }
 
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if indexPath == [0,0] {
-            let cell = tableView.dequeueReusableCell(withIdentifier: Constants.defaultCellID, for: indexPath)
-            cell.textLabel?.font = UIFont.systemFont(ofSize: 20, weight: .semibold)
-            cell.textLabel?.text = "Settings"
-            return cell
-        } else if indexPath == [0,5] {
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: Constants.buttonCellID, for: indexPath) as? ButtonTableViewCell else {
-                let cell = tableView.dequeueReusableCell(withIdentifier: Constants.defaultCellID, for: indexPath)
-                return cell
-            }
-            cell.delegate = self
-            return cell
-        } else {
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: Constants.settingCellID, for: indexPath) as? SettingsTableViewCell else {
-                let cell = tableView.dequeueReusableCell(withIdentifier: Constants.defaultCellID, for: indexPath)
-                return cell
-            }
-            return cell
+    private func setupParams() {
+        let temperatureInFahrenheit = userDefaults.bool(forKey: "temperatureInFahrenheit")
+        let windSpeedInMi = userDefaults.bool(forKey: "windSpeedInMi")
+        let timeFormat12 = userDefaults.bool(forKey: "timeFormat12")
+        let noticeOn = userDefaults.bool(forKey: "noticeOn")
+
+        self.temperatureInFahrenheit = SwitcherButton(
+            firstPositionName: "F",
+            secondPositionName: "C",
+            selectedFirstPosition: temperatureInFahrenheit
+        )
+        self.windSpeedInMi = SwitcherButton(
+            firstPositionName: "Mi",
+            secondPositionName: "Km",
+            selectedFirstPosition: windSpeedInMi
+        )
+        self.timeFormat12 = SwitcherButton(
+            firstPositionName: "12",
+            secondPositionName: "24",
+            selectedFirstPosition: timeFormat12
+        )
+        self.noticeOn = SwitcherButton(
+            firstPositionName: "On",
+            secondPositionName: "Off",
+            selectedFirstPosition: noticeOn
+        )
+
+        self.setupParam(with: "Temperature", switcher: self.temperatureInFahrenheit)
+        self.setupParam(with: "Wind speed", switcher: self.windSpeedInMi)
+        self.setupParam(with: "Time format", switcher: self.timeFormat12)
+        self.setupParam(with: "Notifications", switcher: self.noticeOn)
+    }
+
+    private func setupParam(with text: String, switcher: SwitcherButton?){
+        let paramsHorizontalStack = UIStackView()
+        paramsHorizontalStack.axis = .horizontal
+        paramsHorizontalStack.spacing = 8
+        paramsHorizontalStack.distribution = .fillEqually
+        paramsHorizontalStack.alignment = .fill
+
+
+
+        let label = UILabel()
+        label.clipsToBounds = true
+        label.textColor = .gray
+        label.font = UIFont.systemFont(ofSize: 16, weight: .regular)
+        label.textAlignment = .left
+        label.text = text
+
+        paramsHorizontalStack.addArrangedSubview(label)
+        if switcher != nil {
+            paramsHorizontalStack.addArrangedSubview(switcher!)
         }
+        self.verticalStackView.addArrangedSubview(paramsHorizontalStack)
     }
 
-}
+    private func setupButton() {
 
-extension SettingsView: ButtonTableViewCellDelegate {
-    func dismissController() {
-        self.delegate?.dismissController()
+        self.button.setTitle("Save", for: .normal)
+        self.button.setTitleColor(.systemBackground, for: .normal)
+        self.button.backgroundColor = .systemOrange
+        self.button.translatesAutoresizingMaskIntoConstraints = false
+        self.button.addTarget(self, action:  #selector(buttonTapped), for: .touchUpInside)
+
+        self.addSubview(self.button)
+
+        NSLayoutConstraint.activate([
+            self.button.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -16),
+            self.button.heightAnchor.constraint(equalToConstant: 40),
+            self.button.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 35),
+            self.button.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -35),
+        ])
+
+        self.button.layer.cornerRadius = 10
     }
 
+    @objc private func buttonTapped () {
+        if self.temperatureInFahrenheit?.selectedFirstPosition !=  self.userDefaults.bool(forKey: "temperatureInFahrenheit") {
+            self.userDefaults.setValue(self.temperatureInFahrenheit?.selectedFirstPosition, forKey: "temperatureInFahrenheit")
+        }
 
+        if self.windSpeedInMi?.selectedFirstPosition !=  self.userDefaults.bool(forKey: "windSpeedInMi") {
+            self.userDefaults.setValue(self.windSpeedInMi?.selectedFirstPosition, forKey: "windSpeedInMi")
+        }
+        if self.timeFormat12?.selectedFirstPosition !=  self.userDefaults.bool(forKey: "timeFormat12") {
+            self.userDefaults.setValue(self.timeFormat12?.selectedFirstPosition, forKey: "timeFormat12")
+        }
+        if self.noticeOn?.selectedFirstPosition !=  self.userDefaults.bool(forKey: "noticeOn") {
+            self.userDefaults.setValue(self.noticeOn?.selectedFirstPosition, forKey: "noticeOn")
+        }
+
+        delegate?.dismissController()
+
+    }
 }
-
-

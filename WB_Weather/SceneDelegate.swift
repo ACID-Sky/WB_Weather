@@ -10,7 +10,6 @@ import UIKit
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
-    var appCoordinator: AppCoordinator?
 
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
@@ -18,17 +17,14 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
         self.window = UIWindow(windowScene: windowScene)
 
+
         let navigationBarAppearance = UINavigationBarAppearance()
         navigationBarAppearance.configureWithOpaqueBackground()
         navigationBarAppearance.backgroundColor = .secondarySystemBackground
         UINavigationBar.appearance().scrollEdgeAppearance = navigationBarAppearance
 
-//        let appCoordinator = AppCoordinator()
-//        self.appCoordinator = appCoordinator
-//
-//        self.window?.rootViewController = appCoordinator.start()
-//        self.window?.backgroundColor = .secondarySystemBackground
-        self.window?.rootViewController = UINavigationController(rootViewController: CityViewController())
+        let networkService = NetworkService()
+        self.window?.rootViewController = UINavigationController(rootViewController: WeatherViewController(networkService: networkService))
         self.window?.makeKeyAndVisible()
     }
 

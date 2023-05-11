@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "sammy-woman-under-umbrella-with-a-dog.png",
+      "filename" : "rain1.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "sammy-woman-under-umbrella-with-a-dog 2.png",
+      "filename" : "rain2.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "sammy-woman-under-umbrella-with-a-dog 3.png",
+      "filename" : "rain3.png",
       "idiom" : "universal",
       "scale" : "3x"
     }
