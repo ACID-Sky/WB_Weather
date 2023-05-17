@@ -15,17 +15,39 @@ class ListOfLocationsViewController: UIViewController {
     }
 
     private lazy var coreDataLocationService: CoreDataLocationService = CoreDataLocationServiceImp(delegate: self)
-    private lazy var  tableView = UITableView(frame: .zero, style: .grouped)
+    private lazy var showOnMapButton = UIButton()
+    private lazy var tableView = UITableView(frame: .zero, style: .grouped)
 
     init(){
         super.init(nibName: nil, bundle: nil)
-        self.view.alpha = 0.9
+        self.view.alpha = 0.95
         self.view.backgroundColor = #colorLiteral(red: 0.1248925701, green: 0.3067729473, blue: 0.781540215, alpha: 1)
+        self.setupShowOnMapButton()
         self.setupTableView()
     }
 
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+
+    private func setupShowOnMapButton() {
+        self.showOnMapButton.translatesAutoresizingMaskIntoConstraints = false
+        self.showOnMapButton.backgroundColor = #colorLiteral(red: 0.1248925701, green: 0.3067729473, blue: 0.781540215, alpha: 1)
+        self.showOnMapButton.setTitle("Show locations on the map", for: .normal)
+        self.showOnMapButton.addTarget(self, action:  #selector(showPointOnMap), for: .touchUpInside)
+
+        self.view.addSubview(self.showOnMapButton)
+
+        NSLayoutConstraint.activate([
+            self.showOnMapButton.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor, constant: 16),
+            self.showOnMapButton.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 16),
+            self.showOnMapButton.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -16),
+            self.showOnMapButton.heightAnchor.constraint(equalToConstant: 32),
+        ])
+
+        self.showOnMapButton.layer.cornerRadius = 8
+        self.showOnMapButton.layer.borderWidth = 0.5
+        self.showOnMapButton.layer.borderColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
     }
 
     private func setupTableView() {
@@ -42,13 +64,18 @@ class ListOfLocationsViewController: UIViewController {
         self.view.addSubview(self.tableView)
 
         NSLayoutConstraint.activate([
-            self.tableView.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 16),
+            self.tableView.topAnchor.constraint(equalTo: self.showOnMapButton.bottomAnchor, constant: 4),
             self.tableView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 16),
             self.tableView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -16),
             self.tableView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: -16),
         ])
     }
 
+    @objc func showPointOnMap(){
+        let vc = MapViewController()
+        self.modalPresentationStyle = .formSheet
+        present(vc, animated: true)
+    }
 }
 
 extension ListOfLocationsViewController: UITableViewDataSource {

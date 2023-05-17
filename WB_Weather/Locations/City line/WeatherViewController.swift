@@ -21,7 +21,7 @@ final class WeatherViewController: UIPageViewController {
     init(networkService: NetworkServicePorotocol) {
         self.networkService = networkService
         super.init(transitionStyle: .scroll, navigationOrientation: .horizontal)
-        self.coreDataLocationService = CoreDataLocationServiceImp(delegate: self, locationID: nil)
+        self.coreDataLocationService = CoreDataLocationServiceImp(delegate: self)
 
         NotificationCenter.default.addObserver(self, selector: #selector(userDefaultsDidChange), name: UserDefaults.didChangeNotification, object: nil)
     }
@@ -181,18 +181,13 @@ final class WeatherViewController: UIPageViewController {
                     DispatchQueue.main.async {
                         self.coreDataLocationService?.deleteLocation(for: location.id)
 
+                        let alert = Alerts().showAlert(
+                            with: "Location did not find.",
+                            message: "Location name '\(location.locationName)' not correctly entered. Try another location name.",
+                            preferredStyle: .alert
+                        )
 
-                    let alert = UIAlertController(title: "Location did not find.",
-                                                  message: "Location name '\(location.locationName)' not correctly entered. Try another location name.",
-                                                  preferredStyle: .alert
-                    )
-
-
-
-                    let yesAction = UIAlertAction(title: "Ok", style: .default)
-
-                    alert.addAction(yesAction)
-                    self.present(alert, animated: true)
+                        self.present(alert, animated: true)
                     }
                     return
                 }
