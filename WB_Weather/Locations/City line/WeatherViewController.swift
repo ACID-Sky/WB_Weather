@@ -21,7 +21,7 @@ final class WeatherViewController: UIPageViewController {
     init(networkService: NetworkServicePorotocol) {
         self.networkService = networkService
         super.init(transitionStyle: .scroll, navigationOrientation: .horizontal)
-        self.coreDataLocationService = CoreDataLocationServiceImp(delegate: self, locationID: nil)
+        self.coreDataLocationService = CoreDataLocationServiceImp(delegate: self)
 
         NotificationCenter.default.addObserver(self, selector: #selector(userDefaultsDidChange), name: UserDefaults.didChangeNotification, object: nil)
     }
@@ -96,10 +96,8 @@ final class WeatherViewController: UIPageViewController {
         let locationStatus = self.cLLocationManager.authorizationStatus
 
         switch locationStatus {
-        case .authorizedAlways:
-            self.cLLocationManager.startUpdatingLocation()
-        case .authorizedWhenInUse:
-            self.cLLocationManager.startUpdatingLocation()
+        case .authorizedAlways, .authorizedWhenInUse:
+            self.cLLocationManager.requestLocation()
         case .notDetermined:
             self.deleteSelfLocation()
             let vc = AutorizationViewController()
@@ -107,10 +105,8 @@ final class WeatherViewController: UIPageViewController {
             vc.modalPresentationStyle = .fullScreen
             present(vc, animated: true)
             break
-        case .denied:
+        case .denied, .restricted:
             self.deleteSelfLocation()
-            break
-        case .restricted:
             break
         @unknown default:
             break
@@ -181,18 +177,13 @@ final class WeatherViewController: UIPageViewController {
                     DispatchQueue.main.async {
                         self.coreDataLocationService?.deleteLocation(for: location.id)
 
+                        let alert = Alerts().showAlert(
+                            with: "Location did not find.",
+                            message: "Location name '\(location.locationName)' not correctly entered. Try another location name.",
+                            preferredStyle: .alert
+                        )
 
-                    let alert = UIAlertController(title: "Location did not find.",
-                                                  message: "Location name '\(location.locationName)' not correctly entered. Try another location name.",
-                                                  preferredStyle: .alert
-                    )
-
-
-
-                    let yesAction = UIAlertAction(title: "Ok", style: .default)
-
-                    alert.addAction(yesAction)
-                    self.present(alert, animated: true)
+                        self.present(alert, animated: true)
                     }
                     return
                 }
@@ -411,6 +402,10 @@ extension WeatherViewController: LocationWeatherViewControllerDelegete {
 
 extension WeatherViewController: CLLocationManagerDelegate {
 
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        print("🚨", error)
+    }
+
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         let userLocation = locations.last! as CLLocation
         let currentLocation = Locations(
@@ -435,8 +430,6 @@ extension WeatherViewController: AutorizationViewControllerDelegate {
     func refusalToUseLocation() {
         self.deleteSelfLocation()
     }
-
-
 }
 
 
