@@ -41,8 +41,7 @@ final class MapViewController: UIViewController {
 
         switch locationStatus {
         case .authorizedAlways, .authorizedWhenInUse:
-            self.cLLocationManager.desiredAccuracy =  kCLLocationAccuracyKilometer
-            self.cLLocationManager.startUpdatingLocation()
+            self.cLLocationManager.requestLocation()
             self.mapView.showsUserLocation = true
 
         case .notDetermined, .denied, .restricted:
@@ -236,6 +235,10 @@ final class MapViewController: UIViewController {
 }
 
 extension MapViewController: CLLocationManagerDelegate {
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        print("🚨", error)
+    }
+    
     func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
         self.requestAccessToLocation()
     }

@@ -96,10 +96,8 @@ final class WeatherViewController: UIPageViewController {
         let locationStatus = self.cLLocationManager.authorizationStatus
 
         switch locationStatus {
-        case .authorizedAlways:
-            self.cLLocationManager.startUpdatingLocation()
-        case .authorizedWhenInUse:
-            self.cLLocationManager.startUpdatingLocation()
+        case .authorizedAlways, .authorizedWhenInUse:
+            self.cLLocationManager.requestLocation()
         case .notDetermined:
             self.deleteSelfLocation()
             let vc = AutorizationViewController()
@@ -107,11 +105,11 @@ final class WeatherViewController: UIPageViewController {
             vc.modalPresentationStyle = .fullScreen
             present(vc, animated: true)
             break
-        case .denied:
+
+        case .denied, .restricted:
             self.deleteSelfLocation()
             break
-        case .restricted:
-            break
+
         @unknown default:
             break
         }
@@ -406,6 +404,10 @@ extension WeatherViewController: LocationWeatherViewControllerDelegete {
 
 extension WeatherViewController: CLLocationManagerDelegate {
 
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        print("🚨", error)
+    }
+
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         let userLocation = locations.last! as CLLocation
         let currentLocation = Locations(
@@ -430,8 +432,6 @@ extension WeatherViewController: AutorizationViewControllerDelegate {
     func refusalToUseLocation() {
         self.deleteSelfLocation()
     }
-
-
 }
 
 
