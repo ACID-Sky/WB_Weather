@@ -8,7 +8,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "35EBDCEB-8810-44AF-9B96-6958DC782A67"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "WB_Weather/Locations/List of locations/MapViewController.swift"
@@ -71,7 +71,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "4A02C09E-571E-46DA-81AA-3438EBCD512F"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "WB_Weather/Locations/List of locations/MapViewController.swift"
@@ -197,7 +197,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "65E460D9-5A4F-4CE7-8802-13064C28B2B6"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "WB_Weather/Locations/List of locations/MapViewController.swift"
@@ -213,7 +213,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "6924AE0A-6711-4B2E-8BF4-2B5BBC024681"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "WB_Weather/Locations/List of locations/MapViewController.swift"
@@ -229,7 +229,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "7DD98394-6476-464B-BC3B-3FEC4D6A0ADE"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "WB_Weather/Locations/List of locations/MapViewController.swift"
@@ -245,7 +245,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "F596AE06-5CD0-45D6-971E-B7AA2AB94113"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "WB_Weather/Locations/List of locations/MapViewController.swift"
@@ -277,7 +277,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "393FEDE6-7987-45DA-9300-A6B3C8CD7DA2"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "WB_Weather/CoreDataService/CoreDataLocationService.swift"
@@ -325,7 +325,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "B608D545-26E2-4819-A448-982FCE273D13"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "WB_Weather/Locations/City line/WeatherViewController.swift"
@@ -341,7 +341,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "239FD9DE-12D3-4AD9-BA2E-7E350CB1B254"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "WB_Weather/Locations/City line/WeatherViewController.swift"
@@ -389,7 +389,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "D23117E7-C608-4FF9-A43B-17DD07AF39F3"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "WB_Weather/Locations/City line/WeatherViewController.swift"
