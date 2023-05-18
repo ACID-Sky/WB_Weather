@@ -277,7 +277,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "393FEDE6-7987-45DA-9300-A6B3C8CD7DA2"
-            shouldBeEnabled = "No"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "WB_Weather/CoreDataService/CoreDataLocationService.swift"
@@ -325,7 +325,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "B608D545-26E2-4819-A448-982FCE273D13"
-            shouldBeEnabled = "No"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "WB_Weather/Locations/City line/WeatherViewController.swift"
@@ -341,7 +341,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "239FD9DE-12D3-4AD9-BA2E-7E350CB1B254"
-            shouldBeEnabled = "No"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "WB_Weather/Locations/City line/WeatherViewController.swift"
@@ -349,7 +349,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "409"
             endingLineNumber = "409"
-            landmarkName = "locationManager(_:didUpdateLocations:)"
+            landmarkName = "locationManager(_:didFailWithError:)"
             landmarkType = "7">
             <Locations>
                <Location
@@ -389,7 +389,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "D23117E7-C608-4FF9-A43B-17DD07AF39F3"
-            shouldBeEnabled = "No"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "WB_Weather/Locations/City line/WeatherViewController.swift"
