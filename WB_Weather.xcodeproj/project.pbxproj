@@ -47,6 +47,8 @@
 		76C5B9652A0A55450049F2E2 /* LocationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C5B9642A0A55450049F2E2 /* LocationTableViewCell.swift */; };
 		76C5B9672A0BA5090049F2E2 /* PointInGrathView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C5B9662A0BA5090049F2E2 /* PointInGrathView.swift */; };
 		76C5B9692A0CC9C90049F2E2 /* ValueConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C5B9682A0CC9C90049F2E2 /* ValueConverter.swift */; };
+		76C5B9CD2A14E2DE0049F2E2 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C5B9CC2A14E2DE0049F2E2 /* MapViewController.swift */; };
+		76C5B9D12A1502A10049F2E2 /* Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C5B9D02A1502A00049F2E2 /* Alerts.swift */; };
 		76CB42ED2A0502430098C053 /* Forecast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CB42EC2A0502430098C053 /* Forecast.swift */; };
 /* End PBXBuildFile section */
 
@@ -93,6 +95,8 @@
 		76C5B9642A0A55450049F2E2 /* LocationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationTableViewCell.swift; sourceTree = "<group>"; };
 		76C5B9662A0BA5090049F2E2 /* PointInGrathView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointInGrathView.swift; sourceTree = "<group>"; };
 		76C5B9682A0CC9C90049F2E2 /* ValueConverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValueConverter.swift; sourceTree = "<group>"; };
+		76C5B9CC2A14E2DE0049F2E2 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		76C5B9D02A1502A00049F2E2 /* Alerts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alerts.swift; sourceTree = "<group>"; };
 		76CB42EC2A0502430098C053 /* Forecast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Forecast.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -126,6 +130,7 @@
 		762428E629DAAD5600C11B54 /* WB_Weather */ = {
 			isa = PBXGroup;
 			children = (
+				76C5B9D02A1502A00049F2E2 /* Alerts.swift */,
 				76C5B9682A0CC9C90049F2E2 /* ValueConverter.swift */,
 				76C13A952A03CEA90075E604 /* CommonFunctions.swift */,
 				76966B0A29E3FEDF00AEEF22 /* CoreDataService */,
@@ -296,6 +301,7 @@
 			children = (
 				76C5B9612A0A52710049F2E2 /* ListOfLocationsViewController.swift */,
 				76C5B9642A0A55450049F2E2 /* LocationTableViewCell.swift */,
+				76C5B9CC2A14E2DE0049F2E2 /* MapViewController.swift */,
 			);
 			path = "List of locations";
 			sourceTree = "<group>";
@@ -382,6 +388,7 @@
 				762428E829DAAD5600C11B54 /* AppDelegate.swift in Sources */,
 				76966AE529DED34E00AEEF22 /* DayVisualView.swift in Sources */,
 				76BEAB5529F29C4B00D21D14 /* EmptyViewController.swift in Sources */,
+				76C5B9D12A1502A10049F2E2 /* Alerts.swift in Sources */,
 				76966AD329DEAF5100AEEF22 /* SettingsViewController.swift in Sources */,
 				765CB48229E56131006BA8FD /* NetworkService.swift in Sources */,
 				762428EA29DAAD5600C11B54 /* SceneDelegate.swift in Sources */,
@@ -393,6 +400,7 @@
 				76966AF729DED7E100AEEF22 /* DateTableViewCell.swift in Sources */,
 				76966AE629DED34E00AEEF22 /* TimeForecastTableViewCell.swift in Sources */,
 				76C38B2A29ED67CD00C55452 /* WeatherViewController.swift in Sources */,
+				76C5B9CD2A14E2DE0049F2E2 /* MapViewController.swift in Sources */,
 				76AEA9C929F8FBAB001B3B40 /* CoreDataWeatherService.swift in Sources */,
 				765CB48629E927E5006BA8FD /* WeatherData.swift in Sources */,
 				769D0BCA2A014993008B7D14 /* DayGraphView.swift in Sources */,
