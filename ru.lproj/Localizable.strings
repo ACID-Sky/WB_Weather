@@ -1,0 +1,116 @@
+/* 
+  Localizable.strings
+  WB_Weather
+
+  Created by Лёха Небесный on 18.05.2023.
+  
+*/
+
+"ok.button" = "Хорошо";
+"add.button" = "Добавить";
+"cancel.button" = "Отменить";
+"delete.button" = "Удалить";
+"days" = " дней";
+
+
+"groupOfWeather.Unknow" = "Неизвестно";
+"groupOfWeather.Rain" = "Дождь";
+"groupOfWeather.Snow" = "Снег";
+"groupOfWeather.Extreme" = "Гроза";
+"groupOfWeather.Clear" = "Ясно";
+"groupOfWeather.Clouds" = "Облачно";
+
+"partOFDay.Day" = "День";
+"partOFDay.Night" = "Ночь";
+
+"forecast.weatherDescription.unknown" = "Нет данных";
+"minTempText" = "минº";
+"maxTempText" = "максº";
+"forecast.dontKnow" = "Нет данных";
+"forecast.wind" = "Ветер";
+"forecast.rainfall" = "Осадки";
+"forecast.cloudy" = "Облачность";
+"forecast.feelsLike" = "Ощущается";
+
+"windDirection.N" = "С";
+"windDirection.NNE" = "ССВ";
+"windDirection.NE" = "СВ";
+"windDirection.ENE" = "ВСВ";
+"windDirection.E" = "В";
+"windDirection.ESE" = "ВЮВ";
+"windDirection.SE" = "ЮВ";
+"windDirection.SSE" = "ЮЮВ";
+"windDirection.S" = "Ю";
+"windDirection.SSW" = "ЗЗЮ";
+"windDirection.SW" = "ЗЮ";
+"windDirection.WSW" = "ЗЮЗ";
+"windDirection.W" = "З";
+"windDirection.WNW" = "ЗСЗ";
+"windDirection.NW" = "СЗ";
+"windDirection.NNW" = "ССЗ";
+"windSpeed.mph" = "миль/ч";
+"windSpeed.m/s" = "м/с";
+
+"urlComponents.queryItems.forecast.lang" = "ru";
+"urlComponents.queryItems.geocode.lang" = "ru_RU";
+"dateFormatter.locale"  = "ru_RU";
+
+"AutorizationViewController.fistlabel.text" = "Разрешите приложению WBWeather использовать данные о местоположении вашего устройства.";
+"AutorizationViewController.secondLabel.text" = "Чтобы получить точные прогнозы погоды для места где Вы находитесь. \n\n Вы можете изменить свой выбор в любое время из меню приложения.";
+"AutorizationViewController.acceptButton.setTitle" = "ИСПОЛЬЗОВАТЬ МЕСТОНАХОЖДЕНИЕ";
+"AutorizationViewController.refusalLabel.text" = "НЕТ, Я ДОБАВЛЮ ЛОКАЦИИ ВРУЧНУЮ";
+
+"ListOfLocationsViewController.showOnMapButton.setTitle" = "Показать локации на карте";
+
+"MapViewController.label.text" = "Нажмите на точку, до которой Вы хотите построить маршрут.";
+
+"MapViewController.mapView.mapType.standard" = "Стандартный";
+"MapViewController.mapView.mapType.satellite" = "Вид со спутника";
+"MapViewController.mapView.mapType.hybrid" = "Гибридный";
+"MapViewController.mapView.mapType.satelliteFlyover" = "Пролет спутника";
+"MapViewController.mapView.mapType.mutedStandard" = "Стандартный (приглушенный)";
+"MapViewController.mapView.menuMapType" = "Вид карты";
+
+"MapViewController.mapView.transportType.any" = "Любой";
+"MapViewController.mapView.transportType.automobile" = "На машине";
+"MapViewController.mapView.transportType.transit" = "Общественный транспорт";
+"MapViewController.mapView.transportType.walking" = "Пеший";
+"MapViewController.mapView.menuRouteType" = "Вид маршрута";
+
+"MapViewController.alert.title" = "Маршрут не доступен.";
+"MapViewController.alert.message" = "Не возможно построить выбранный вид маршрута до выбранной точки. выберете другую точку или измените вид маршрута";
+
+"DetailsView.label.text" = "Подробнее на 24 часа";
+
+"DailyForecastHeadView.label.text" = "Прогноз по дням";
+
+"WeatherViewController.navigationItem.title" = "Локация";
+"WeatherViewController.navigationItem.emptiTitle" = "Локации отсутствуют";
+"WeatherViewController.getGeoCode.alert.title" = "Локация не найдена.";
+"WeatherViewController.getGeoCode.alert.message" = "Такой локации как %@ не удалось найти. Попробуйте ввести имя по-другому.";
+"WeatherViewController.didTapRightButton1.alert.title" = "Добавить локацию.";
+"WeatherViewController.didTapRightButton1.alert.message" = "Введите название локации и нажмите 'Добавить'.";
+"WeatherViewController.didTapRightButton1.alert.textField.placeholder" = "Название локации для добавлеия";
+
+"RundownTableViewCell.feelsLabel" = "Ощущается как";
+"RundownTableViewCell.windLabel" = "Ветер";
+"RundownTableViewCell.ufIndexLabel" = "УФ индек";
+"RundownTableViewCell.rainLabel" = "Вероятность дождя";
+"RundownTableViewCell.cloudyLabel" = "Облачность";
+
+"DiaryViewController.navigationItem.title" = "Дневной прогноз погоды";
+"DayViewController.navigationItem.title" = "Прогноз на ближайшие 24 часа";
+
+
+"SettingsView.mainLabel.text" = "Настройки";
+"SettingsView.temperature" = "Температура";
+"SettingsView.windSpeed" = "Скорость ветра";
+"SettingsView.timeFormat" = "Формат времени";
+"SettingsView.notifications" = "Уведомления";
+"SettingsView.button.title" = "Сохранить";
+"SettingsView.temperatureInFahrenheit.first" = "Ф";
+"SettingsView.temperatureInFahrenheit.second" = "Ц";
+"SettingsView.windSpeedInMi.first" = "Миль/ч";
+"SettingsView.windSpeedInMi.second" = "М/с";
+"SettingsView.noticeOn.first" = "Вкл.";
+"SettingsView.noticeOn.second" = "Откл.";

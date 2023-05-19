@@ -39,13 +39,14 @@ final class WeatherViewController: UIPageViewController {
         self.setupView()
         self.requestAccessToLocation()
         self.setupFirstController()
+        self.updateLocations()
         self.getWaetherForAllLocations()
     }
 
     /// Устанавливает фон, кнопки в навигейшнвью и pageController
     private func setupView() {
         self.view.backgroundColor = #colorLiteral(red: 0.1248925701, green: 0.3067729473, blue: 0.781540215, alpha: 1)
-        self.navigationItem.title = "Location"
+        self.navigationItem.title = NSLocalizedString("WeatherViewController.navigationItem.title", comment: "Location")
         self.navigationController?.navigationBar.tintColor = #colorLiteral(red: 0.1248925701, green: 0.3067729473, blue: 0.781540215, alpha: 1)
 
         let leftBarButton = UIBarButtonItem(
@@ -178,10 +179,18 @@ final class WeatherViewController: UIPageViewController {
 
                     DispatchQueue.main.async {
                         self.coreDataLocationService?.deleteLocation(for: location.id)
+                        let messageTemplate = NSLocalizedString(
+                            "WeatherViewController.getGeoCode.alert.message",
+                            comment: "Location did not find. - message"
+                        )
+                        let message = String(format: messageTemplate, location.locationName)
 
                         let alert = Alerts().showAlert(
-                            with: "Location did not find.",
-                            message: "Location name '\(location.locationName)' not correctly entered. Try another location name.",
+                            with: NSLocalizedString(
+                                "WeatherViewController.getGeoCode.alert.title",
+                                comment: "Location did not find."
+                            ),
+                            message: message,
                             preferredStyle: .alert
                         )
 
@@ -200,9 +209,13 @@ final class WeatherViewController: UIPageViewController {
                 var lattitude = coordinate
                 lattitude.removeSubrange(range)
 
-                let region = answer.response.geoObjectCollection.featureMember[0].geoObject.description
+                let region = {
+                    guard let description = answer.response.geoObjectCollection.featureMember[0].geoObject.description else { return "" }
+                    return description + ", "
+
+                }()
                 let name = answer.response.geoObjectCollection.featureMember[0].geoObject.name
-                let locationName = region + ", " + name
+                let locationName = region + name
 
                 let location = Locations(
                     id: location.id,
@@ -289,6 +302,21 @@ final class WeatherViewController: UIPageViewController {
         )
     }
 
+    /// Обновляем локации, если поменялось их название или изменилась локализация языка на устройстве
+    private func updateLocations() {
+        guard let locationsInCoreData = self.coreDataLocationService?.getObjects(), locationsInCoreData.isEmpty == false else {return}
+
+        locationsInCoreData.forEach({
+            let locatoin = Locations(
+                id: $0.locationID,
+                locationName: $0.locationName ?? "Unknow",
+                locationLatitude: $0.locationLatitude ?? "lat",
+                locationLongitude: $0.locationLongitude ?? "long"
+            )
+            self.getGeoCode(requestype: .getGeocodeLocation, location: locatoin)
+        })
+
+    }
 
     @objc func userDefaultsDidChange(_ notification: Notification) {
         let index = self.pageControl.currentPage
@@ -310,11 +338,19 @@ final class WeatherViewController: UIPageViewController {
     @objc private func didTapRightButton1()  {
         self.navigationItem.rightBarButtonItems?[0].isEnabled = false
 
-        let alertController = UIAlertController(title: "Add a location.",
-                                                message: "Enter the location you want to add and click 'Add'.",
-                                                preferredStyle: .alert)
+        let alertController = UIAlertController(
+            title: NSLocalizedString(
+                "WeatherViewController.didTapRightButton1.alert.title",
+                comment: "Add a location."
+            ),
+            message: NSLocalizedString(
+                "WeatherViewController.didTapRightButton1.alert.message",
+                comment: "Enter the location you want to add and click 'Add'."
+            ),
+            preferredStyle: .alert
+        )
 
-        let createAction = UIAlertAction(title: "Add", style: .default) { _ in
+        let createAction = UIAlertAction(title: NSLocalizedString("add.button", comment: "Add"), style: .default) { _ in
 
             guard let locationName = alertController.textFields?.first?.text else {
                 self.navigationItem.rightBarButtonItems?[0].isEnabled = true
@@ -346,12 +382,15 @@ final class WeatherViewController: UIPageViewController {
             self.navigationItem.rightBarButtonItems?[0].isEnabled = true
         }
 
-        let cancelAction = UIAlertAction(title: "Cancel", style: .destructive) { _ in
+        let cancelAction = UIAlertAction(title: NSLocalizedString("cancel.button", comment: "Cancel"), style: .destructive) { _ in
             self.navigationItem.rightBarButtonItems?[0].isEnabled = true
         }
 
         alertController.addTextField() {
-            $0.placeholder = "Enter the location you want to add."
+            $0.placeholder = NSLocalizedString(
+                "WeatherViewController.didTapRightButton1.alert.textField.placeholder",
+                comment: "Enter the location you want to add."
+            )
             $0.keyboardType = .asciiCapable
             $0.returnKeyType = .done
             $0.autocapitalizationType = .sentences
@@ -466,7 +505,10 @@ extension WeatherViewController: NSFetchedResultsControllerDelegate {
                         return vc
                     } else {
                         self.pageControl.currentPage = 0
-                        self.navigationItem.title = "No location"
+                        self.navigationItem.title = NSLocalizedString(
+                            "WeatherViewController.navigationItem.emptiTitle",
+                            comment: "No location"
+                        )
                         return EmptyViewController()
                     }
                 }()

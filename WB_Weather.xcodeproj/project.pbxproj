@@ -39,6 +39,8 @@
 		76C13A8E2A0246FC0075E604 /* XLinePointAndLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C13A8D2A0246FC0075E604 /* XLinePointAndLine.swift */; };
 		76C13A942A03C57A0075E604 /* DateCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C13A932A03C57A0075E604 /* DateCollectionViewCell.swift */; };
 		76C13A962A03CEA90075E604 /* CommonFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C13A952A03CEA90075E604 /* CommonFunctions.swift */; };
+		76C1C65E2A167B29000A8EFC /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 76C1C6602A167B29000A8EFC /* Localizable.strings */; };
+		76C1C6642A173EE4000A8EFC /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 76C1C6662A173EE4000A8EFC /* InfoPlist.strings */; };
 		76C38B2A29ED67CD00C55452 /* WeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C38B2929ED67CD00C55452 /* WeatherViewController.swift */; };
 		76C38B2C29ED780F00C55452 /* LocationWeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C38B2B29ED780F00C55452 /* LocationWeatherViewController.swift */; };
 		76C5B95E2A07C42F0049F2E2 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C5B95D2A07C42F0049F2E2 /* SettingsView.swift */; };
@@ -87,6 +89,11 @@
 		76C13A8D2A0246FC0075E604 /* XLinePointAndLine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XLinePointAndLine.swift; sourceTree = "<group>"; };
 		76C13A932A03C57A0075E604 /* DateCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateCollectionViewCell.swift; sourceTree = "<group>"; };
 		76C13A952A03CEA90075E604 /* CommonFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonFunctions.swift; sourceTree = "<group>"; };
+		76C1C65B2A167AEE000A8EFC /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		76C1C65F2A167B29000A8EFC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		76C1C6612A167B2F000A8EFC /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
+		76C1C6652A173EE4000A8EFC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		76C1C6672A173EEE000A8EFC /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		76C38B2929ED67CD00C55452 /* WeatherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewController.swift; sourceTree = "<group>"; };
 		76C38B2B29ED780F00C55452 /* LocationWeatherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationWeatherViewController.swift; sourceTree = "<group>"; };
 		76C5B95D2A07C42F0049F2E2 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
@@ -114,6 +121,8 @@
 		762428DB29DAAD5500C11B54 = {
 			isa = PBXGroup;
 			children = (
+				76C1C6662A173EE4000A8EFC /* InfoPlist.strings */,
+				76C1C6602A167B29000A8EFC /* Localizable.strings */,
 				762428E629DAAD5600C11B54 /* WB_Weather */,
 				762428E529DAAD5600C11B54 /* Products */,
 			);
@@ -348,6 +357,7 @@
 			knownRegions = (
 				en,
 				Base,
+				ru,
 			);
 			mainGroup = 762428DB29DAAD5500C11B54;
 			productRefGroup = 762428E529DAAD5600C11B54 /* Products */;
@@ -365,6 +375,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				762428F729DAAD5800C11B54 /* LaunchScreen.storyboard in Resources */,
+				76C1C6642A173EE4000A8EFC /* InfoPlist.strings in Resources */,
+				76C1C65E2A167B29000A8EFC /* Localizable.strings in Resources */,
 				762428F429DAAD5800C11B54 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -427,8 +439,27 @@
 			isa = PBXVariantGroup;
 			children = (
 				762428F629DAAD5800C11B54 /* Base */,
+				76C1C65B2A167AEE000A8EFC /* ru */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		76C1C6602A167B29000A8EFC /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				76C1C65F2A167B29000A8EFC /* en */,
+				76C1C6612A167B2F000A8EFC /* ru */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+		76C1C6662A173EE4000A8EFC /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				76C1C6652A173EE4000A8EFC /* en */,
+				76C1C6672A173EEE000A8EFC /* ru */,
+			);
+			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -438,6 +469,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -498,6 +530,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";

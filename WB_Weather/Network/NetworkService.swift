@@ -105,13 +105,20 @@ extension NetworkService: NetworkServicePorotocol {
         case .getGeocodeLocation, .getCoordinate:
             urlComponents.host = "geocode-maps.yandex.ru"
             urlComponents.path = "/1.x"
+            urlComponents.queryItems = [
+                URLQueryItem(name: "format", value: "json"),
+                URLQueryItem(name: "apikey", value: "411db0cc-8c04-474f-8d94-803938f91fad"),
+                URLQueryItem(name: "kind", value: "locality"),
+                URLQueryItem(name: "results", value: "1"),
+                URLQueryItem(name: "lang", value: NSLocalizedString("urlComponents.queryItems.geocode.lang", comment: "code of language for geocode")),
+            ]
         case .cuurentForecast, .daysForecast:
             urlComponents.host = "api.openweathermap.org"
             urlComponents.queryItems = [
                 URLQueryItem(name: "lat", value: location.locationLatitude),
                 URLQueryItem(name: "lon", value: location.locationLongitude),
                 URLQueryItem(name: "units", value: "metric"),
-                URLQueryItem(name: "lang", value: "en"),
+                URLQueryItem(name: "lang", value: NSLocalizedString("urlComponents.queryItems.forecast.lang", comment: "code of language for forecast")),
                 URLQueryItem(name: "appid", value: "6cc466710a9af41fc70603dbd8eff188"),
             ]
         }
@@ -119,24 +126,12 @@ extension NetworkService: NetworkServicePorotocol {
         switch requestType {
         case .getGeocodeLocation:
             let coordinate = location.locationLatitude + ", " + location.locationLongitude
-            urlComponents.queryItems = [
-                URLQueryItem(name: "format", value: "json"),
-                URLQueryItem(name: "apikey", value: "411db0cc-8c04-474f-8d94-803938f91fad"),
-                URLQueryItem(name: "geocode", value: coordinate),
-                URLQueryItem(name: "sco", value: "latlong"),
-                URLQueryItem(name: "kind", value: "locality"),
-                URLQueryItem(name: "results", value: "1"),
-                URLQueryItem(name: "lang", value: "en_RU"),
-            ]
+            urlComponents.queryItems?.append(URLQueryItem(name: "geocode", value: coordinate))
+            urlComponents.queryItems?.append(URLQueryItem(name: "sco", value: "latlong"))
+
         case .getCoordinate:
-            urlComponents.queryItems = [
-                URLQueryItem(name: "format", value: "json"),
-                URLQueryItem(name: "apikey", value: "411db0cc-8c04-474f-8d94-803938f91fad"),
-                URLQueryItem(name: "geocode", value: location.locationName),
-                URLQueryItem(name: "kind", value: "locality"),
-                URLQueryItem(name: "results", value: "1"),
-                URLQueryItem(name: "lang", value: "en_RU"),
-            ]
+            urlComponents.queryItems?.append( URLQueryItem(name: "geocode", value: location.locationName))
+
         case .cuurentForecast:
             urlComponents.path = "/data/2.5/weather"
         case .daysForecast:

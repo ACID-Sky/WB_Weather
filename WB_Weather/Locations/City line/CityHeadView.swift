@@ -151,8 +151,8 @@ final class CityHeadView: UIView {
             self.labelStackView.topAnchor.constraint(equalTo: self.ellipseImage.topAnchor, constant: 16),
             self.labelStackView.centerXAnchor.constraint(equalTo: self.centerXAnchor),
             self.labelStackView.bottomAnchor.constraint(equalTo: self.sunriseImage.bottomAnchor),
-            self.labelStackView.leadingAnchor.constraint(equalTo: self.ellipseImage.leadingAnchor, constant: 35),
-            self.labelStackView.trailingAnchor.constraint(equalTo: self.ellipseImage.trailingAnchor, constant: -35),
+            self.labelStackView.leadingAnchor.constraint(equalTo: self.ellipseImage.leadingAnchor, constant: 16),
+            self.labelStackView.trailingAnchor.constraint(equalTo: self.ellipseImage.trailingAnchor, constant: -16),
         ])
 
         self.setupMinMaxTemperetureLabel()
@@ -292,7 +292,7 @@ final class CityHeadView: UIView {
         let dateFormatter = DateFormatter()
         
         dateFormatter.timeZone = TimeZone(secondsFromGMT: Int(forecast.timezone))
-        dateFormatter.locale = Locale(identifier: ValueConverter.shared.getLocal())
+        dateFormatter.locale = Locale(identifier: NSLocalizedString("dateFormatter.locale", comment: "dateFormatter locale"))
         dateFormatter.dateFormat = ValueConverter.shared.getFormat(timeStyleShort: true)
 
         self.sunriseLabel.text = dateFormatter.string(from: surise)

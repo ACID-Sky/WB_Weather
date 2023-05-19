@@ -48,7 +48,7 @@ final class DiaryViewController: UIViewController {
     }
 
     private func setupView() {
-        self.navigationItem.title = "Diary weather report"
+        self.navigationItem.title = NSLocalizedString("DiaryViewController.navigationItem.title", comment: "Diary weather report") 
         self.view.backgroundColor = #colorLiteral(red: 0.1248925701, green: 0.3067729473, blue: 0.781540215, alpha: 1)
         self.rootView.translatesAutoresizingMaskIntoConstraints = false
         self.rootView.backgroundColor = .systemBackground

@@ -20,8 +20,8 @@ struct Alerts {
         )
 
 
-
-        let yesAction = UIAlertAction(title: "Ok", style: .default)
+        let text = NSLocalizedString("ok.button", comment: "Button OK")
+        let yesAction = UIAlertAction(title: text, style: .default)
 
         alert.addAction(yesAction)
         return alert

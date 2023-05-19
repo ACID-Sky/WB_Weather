@@ -59,8 +59,6 @@ final class CoreDataWeatherServiceImp {
             sectionNameKeyPath: nil,
             cacheName: nil
         )
-
-//        Возможно стоит добавить вызов self.fetchLocations(predicate: nil)
     }
 
     /// Запуск работы с fetchedResultController

@@ -1,0 +1,116 @@
+/* 
+  Localizable.strings
+  WB_Weather
+
+  Created by Лёха Небесный on 18.05.2023.
+  
+*/
+"ok.button" = "Ok";
+"add.button" = "Add";
+"cancel.button" = "Cancel";
+"delete.button" = "Delete";
+"days" = " days";
+
+
+"groupOfWeather.Unknow" = "Unknow";
+"groupOfWeather.Rain" = "Rain";
+"groupOfWeather.Snow" = "Snow";
+"groupOfWeather.Extreme" = "Extreme";
+"groupOfWeather.Clear" = "Clear";
+"groupOfWeather.Clouds" = "Clouds";
+
+"partOFDay.Day" = "Day";
+"partOFDay.Night" = "Night";
+
+"forecast.weatherDescription.unknown" = "We don't have data at the data.";
+"minTempText" = "minº";
+"maxTempText" = "maxº";
+"forecast.dontKnow" = "We don't know";
+"forecast.wind" = "Wind";
+"forecast.rainfall" = "Rainfall";
+"forecast.cloudy" = "Cloudy";
+"forecast.feelsLike" = "Feels like ";
+
+"windDirection.N" = "N";
+"windDirection.NNE" = "NNE";
+"windDirection.NE" = "NE";
+"windDirection.ENE" = "ENE";
+"windDirection.E" = "E";
+"windDirection.ESE" = "ESE";
+"windDirection.SE" = "SE";
+"windDirection.SSE" = "SSE";
+"windDirection.S" = "S";
+"windDirection.SSW" = "SSW";
+"windDirection.SW" = "SW";
+"windDirection.WSW" = "WSW";
+"windDirection.W" = "W";
+"windDirection.WNW" = "WNW";
+"windDirection.NW" = "NW";
+"windDirection.NNW" = "NNW";
+"windSpeed.mph" = "mph";
+"windSpeed.m/s" = "m/s";
+
+"urlComponents.queryItems.forecast.lang" = "en";
+"urlComponents.queryItems.geocode.lang" = "en_RU";
+"dateFormatter.locale"  = "en_US";
+
+"AutorizationViewController.fistlabel.text" = "Allow the Weather app to use your device location data.";
+"AutorizationViewController.secondLabel.text" = "To get more accurate weather forecasts while moving or traveling. \n\n You can change your selection at any time from the app menu.";
+"AutorizationViewController.acceptButton.setTitle" = "USE DEVICE LOCATION";
+"AutorizationViewController.refusalLabel.text" = "NO, I’LL ADD LOCATIONS";
+
+"ListOfLocationsViewController.showOnMapButton.setTitle" = "Show locations on the map";
+
+"MapViewController.label.text" = "Click on the route from your location to the selected point.";
+
+"MapViewController.mapView.mapType.standard" = "Standard";
+"MapViewController.mapView.mapType.satellite" = "Satellite";
+"MapViewController.mapView.mapType.hybrid" = "Hybrid";
+"MapViewController.mapView.mapType.satelliteFlyover" = "Satellite flyover";
+"MapViewController.mapView.mapType.mutedStandard" = "Muted standard";
+"MapViewController.mapView.menuMapType" = "Map type";
+
+"MapViewController.mapView.transportType.any" = "Any";
+"MapViewController.mapView.transportType.automobile" = "By car";
+"MapViewController.mapView.transportType.transit" = "By public transport";
+"MapViewController.mapView.transportType.walking" = "By foot";
+"MapViewController.mapView.menuRouteType" = "Route type";
+
+"MapViewController.alert.title" = "The route could not be built.";
+"MapViewController.alert.message" = "It is not possible to plot the route to your chosen location. Try another location.";
+
+"DetailsView.label.text" = "More info for 24 hours";
+
+"DailyForecastHeadView.label.text" = "Daily forecast";
+
+"WeatherViewController.navigationItem.title" = "Location";
+"WeatherViewController.navigationItem.emptiTitle" = "No location";
+"WeatherViewController.getGeoCode.alert.title" = "Location did not find.";
+"WeatherViewController.getGeoCode.alert.message" = "Location name %@ not correctly entered. Try another location name.";
+"WeatherViewController.didTapRightButton1.alert.title" = "Add a location.";
+"WeatherViewController.didTapRightButton1.alert.message" = "Enter the location you want to add and click 'Add'.";
+"WeatherViewController.didTapRightButton1.alert.textField.placeholder" = "Enter the location you want to add.";
+
+"RundownTableViewCell.feelsLabel" = "Feels like";
+"RundownTableViewCell.windLabel" = "Wind";
+"RundownTableViewCell.ufIndexLabel" = "UV index";
+"RundownTableViewCell.rainLabel" = "Possibility of rain";
+"RundownTableViewCell.cloudyLabel" = "Cloudiness";
+
+"DiaryViewController.navigationItem.title" = "Diary weather report";
+"DayViewController.navigationItem.title" = "Forecast for 24 hours";
+
+
+"SettingsView.mainLabel.text" = "Settings";
+"SettingsView.temperature" = "Temperature";
+"SettingsView.windSpeed" = "Wind speed";
+"SettingsView.timeFormat" = "Time format";
+"SettingsView.notifications" = "Notifications";
+"SettingsView.button.title" = "Save";
+"SettingsView.temperatureInFahrenheit.first" = "F";
+"SettingsView.temperatureInFahrenheit.second" = "C";
+"SettingsView.windSpeedInMi.first" = "MPH";
+"SettingsView.windSpeedInMi.second" = "M/S";
+"SettingsView.noticeOn.first" = "On";
+"SettingsView.noticeOn.second" = "Off";
+

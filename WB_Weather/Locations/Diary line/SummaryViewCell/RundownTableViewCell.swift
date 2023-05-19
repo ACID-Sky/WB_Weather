@@ -114,11 +114,26 @@ class RundownTableViewCell: UITableViewCell {
 
         let paramsArray = [
             (label: self.dayForecastLabel, imageName: "", descriptionText: ""),
-            (label: self.feelsLabel, imageName: "Feels like", descriptionText: "Feels like"),
-            (label: self.windLabel, imageName:  "windcolor", descriptionText: "Wind"),
-            (label: self.ufIndexLabel, imageName: "Sun", descriptionText: "UV index"),
-            (label: self.rainLabel, imageName: "rain", descriptionText: "Possibility of rain"),
-            (label: self.cloudyLabel, imageName: "cloudBlue", descriptionText: "Cloudiness")
+            (label: self.feelsLabel, imageName: "Feels like", descriptionText: NSLocalizedString(
+                "RundownTableViewCell.feelsLabel",
+                comment: "Feels like"
+            )),
+            (label: self.windLabel, imageName:  "windcolor", descriptionText: NSLocalizedString(
+                "RundownTableViewCell.windLabel",
+                comment: "Wind"
+            )),
+            (label: self.ufIndexLabel, imageName: "Sun", descriptionText: NSLocalizedString(
+                "RundownTableViewCell.ufIndexLabel",
+                comment: "UV index"
+            )),
+            (label: self.rainLabel, imageName: "rain", descriptionText: NSLocalizedString(
+                "RundownTableViewCell.rainLabel",
+                comment: "Possibility of rain"
+            )),
+            (label: self.cloudyLabel, imageName: "cloudBlue", descriptionText: NSLocalizedString(
+                "RundownTableViewCell.cloudyLabel",
+                comment: "Cloudiness"
+            ))
         ]
 
         for (index, params) in paramsArray.enumerated() {
@@ -206,10 +221,11 @@ extension RundownTableViewCell {
     /// Передача прогноза погоды для установки значений в ячейке
     /// - Parameter forecast: Прогноза средней погоды за часть дня
     func setupForecast(with forecast: Forecast){
+        let forecastText = NSLocalizedString(forecast.groupOfWeather.rawValue, comment: "groupOfWeather.___")
         self.timeOfDayLabel.text = forecast.partOfDay
         self.weatherImageView.image = forecast.groupOfWeatherImage
         self.tempLabel.text = forecast.temText
-        self.dayForecastLabel.text = forecast.groupOfWeather.rawValue
+        self.dayForecastLabel.text = forecastText
         self.feelsLikeImageView?.image = forecast.feelsLikeImage
         self.feelsLabel.text = forecast.feelsLikeText
         self.windLabel.text = forecast.windText

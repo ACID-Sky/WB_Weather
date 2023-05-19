@@ -54,13 +54,14 @@ final class MapViewController: UIViewController {
     }
 
     private func setupLabel() {
+        let text = NSLocalizedString("MapViewController.label.text", comment: "Description how work with map")
         self.label.translatesAutoresizingMaskIntoConstraints = false
         self.label.clipsToBounds = true
         self.label.numberOfLines = 0
         self.label.textColor = .black
         self.label.font = UIFont.systemFont(ofSize: 16, weight: .medium)
         self.label.textAlignment = .left
-        self.label.text  = "Click on the route from your location to the selected point."
+        self.label.text  = text
 
         self.view.addSubview(self.label)
 
@@ -73,29 +74,31 @@ final class MapViewController: UIViewController {
     }
 
     private func setupButtonWithMenuMapType() {
-        let first = UIAction(title: "Standard") { _ in
+        let first = UIAction(title: NSLocalizedString("MapViewController.mapView.mapType.standard", comment: "")) { _ in
             self.mapView.mapType = .standard
         }
-        let second = UIAction(title: "Satellite") { _ in
+        let second = UIAction(title: NSLocalizedString("MapViewController.mapView.mapType.satellite", comment: "")) { _ in
             self.mapView.mapType = .satellite
         }
-        let third = UIAction(title: "Hybrid") { _ in
+        let third = UIAction(title: NSLocalizedString("MapViewController.mapView.mapType.hybrid", comment: "")) { _ in
             self.mapView.mapType = .hybrid
         }
-        let four = UIAction(title: "Satellite flyover") { _ in
+        let four = UIAction(title: NSLocalizedString("MapViewController.mapView.mapType.satelliteFlyover", comment: "")) { _ in
             self.mapView.mapType = .satelliteFlyover
         }
-        let fifth = UIAction(title: "Muted standard") { _ in
+        let fifth = UIAction(title: NSLocalizedString("MapViewController.mapView.mapType.mutedStandard", comment: "")) { _ in
             self.mapView.mapType = .mutedStandard
         }
 
         let elements = [first, second, third, four, fifth]
 
-        let menuMapType = UIMenu(title: "Map type.", children: elements)
+        let title = NSLocalizedString("MapViewController.mapView.menuMapType", comment: "Map type")
+
+        let menuMapType = UIMenu(title: title, children: elements)
 
         self.buttonWithMenuMapType.translatesAutoresizingMaskIntoConstraints = false
         self.buttonWithMenuMapType.backgroundColor = #colorLiteral(red: 0.1248925701, green: 0.3067729473, blue: 0.781540215, alpha: 1)
-        self.buttonWithMenuMapType.setTitle("Map type.", for: .normal)
+        self.buttonWithMenuMapType.setTitle(title, for: .normal)
         self.buttonWithMenuMapType.showsMenuAsPrimaryAction = true
         self.buttonWithMenuMapType.menu = menuMapType
 
@@ -114,30 +117,32 @@ final class MapViewController: UIViewController {
     }
 
     private func setupButtonWithMenuRouteType() {
-        let first = UIAction(title: "Any") { _ in
+        let first = UIAction(title: NSLocalizedString("MapViewController.mapView.transportType.any", comment: "")) { _ in
             self.transportType = .any
             self.addRoute(to: self.directions)
         }
-        let second = UIAction(title: "By car") { _ in
+        let second = UIAction(title: NSLocalizedString("MapViewController.mapView.transportType.automobile", comment: "")) { _ in
             self.transportType = .automobile
             self.addRoute(to: self.directions)
         }
-        let third = UIAction(title: "By public transport") { _ in
+        let third = UIAction(title: NSLocalizedString("MapViewController.mapView.transportType.transit", comment: "")) { _ in
             self.transportType = .transit
             self.addRoute(to: self.directions)
         }
-        let four = UIAction(title: "By foot") { _ in
+        let four = UIAction(title: NSLocalizedString("MapViewController.mapView.transportType.walking", comment: "")) { _ in
             self.transportType = .walking
             self.addRoute(to: self.directions)
         }
 
         let elements = [first, second, third, four]
 
-        let menuRouteType = UIMenu(title: "Route type.", children: elements)
+        let title = NSLocalizedString("MapViewController.mapView.menuRouteType", comment: "Route type")
+
+        let menuRouteType = UIMenu(title: title, children: elements)
 
         self.buttonWithMenuRouteType.translatesAutoresizingMaskIntoConstraints = false
         self.buttonWithMenuRouteType.backgroundColor = #colorLiteral(red: 0.1248925701, green: 0.3067729473, blue: 0.781540215, alpha: 1)
-        self.buttonWithMenuRouteType.setTitle("Route type.", for: .normal)
+        self.buttonWithMenuRouteType.setTitle(title, for: .normal)
         self.buttonWithMenuRouteType.showsMenuAsPrimaryAction = true
         self.buttonWithMenuRouteType.menu = menuRouteType
 
@@ -212,8 +217,8 @@ final class MapViewController: UIViewController {
             guard let response = response else {
                 if error != nil {
                     let alert = Alerts().showAlert(
-                        with: "The route could not be built.",
-                        message: "It is not possible to plot the route to your chosen location. Try another location.",
+                        with: NSLocalizedString("MapViewController.alert.title", comment: "alert title"),
+                        message: NSLocalizedString("MapViewController.alert.message", comment: "alert message"),
                         preferredStyle: .alert
                     )
 
