@@ -382,6 +382,21 @@
                   endingLineNumber = "410"
                   offsetFromSymbolStart = "124">
                </Location>
+               <Location
+                  uuid = "239FD9DE-12D3-4AD9-BA2E-7E350CB1B254 - 24bfedabb1aca7fa"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "WB_Weather.WeatherViewController.didTapRightButton2() -&gt; ()"
+                  moduleName = "WB_Weather"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/acid_sky/Desktop/Swift/WB_Weather/WB_Weather/Locations/City%20line/WeatherViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "409"
+                  endingLineNumber = "409"
+                  offsetFromSymbolStart = "126">
+               </Location>
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
@@ -429,6 +444,21 @@
                   startingLineNumber = "417"
                   endingLineNumber = "417"
                   offsetFromSymbolStart = "616">
+               </Location>
+               <Location
+                  uuid = "D23117E7-C608-4FF9-A43B-17DD07AF39F3 - efe5d55d3e101fd4"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "WB_Weather.WeatherViewController.pageViewController(_: __C.UIPageViewController, viewControllerBefore: __C.UIViewController) -&gt; Swift.Optional&lt;__C.UIViewController&gt;"
+                  moduleName = "WB_Weather"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/acid_sky/Desktop/Swift/WB_Weather/WB_Weather/Locations/City%20line/WeatherViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "418"
+                  endingLineNumber = "418"
+                  offsetFromSymbolStart = "125">
                </Location>
             </Locations>
          </BreakpointContent>
