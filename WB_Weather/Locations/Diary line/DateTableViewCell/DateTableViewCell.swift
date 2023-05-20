@@ -47,6 +47,7 @@ final class DateTableViewCell: UITableViewCell {
     private func setupCollectionView(){
         self.collectionView.dataSource = self
         self.collectionView.delegate = self
+        self.collectionView.backgroundColor = .clear
         self.collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: Constants.defaultCellID)
         self.collectionView.register(DateCollectionViewCell.self, forCellWithReuseIdentifier: Constants.dayForCellID)
         self.collectionView.showsHorizontalScrollIndicator = false

@@ -49,9 +49,9 @@ final class DiaryViewController: UIViewController {
 
     private func setupView() {
         self.navigationItem.title = "DiaryViewController.navigationItem.title".localized
-        self.view.backgroundColor = #colorLiteral(red: 0.1248925701, green: 0.3067729473, blue: 0.781540215, alpha: 1)
+        self.view = BackgroundView(frame: self.view.frame)
         self.rootView.translatesAutoresizingMaskIntoConstraints = false
-        self.rootView.backgroundColor = .systemBackground
+        self.rootView.backgroundColor = .clear
         self.view.addSubview(rootView)
 
         NSLayoutConstraint.activate([

@@ -44,9 +44,9 @@ final class DayViewController: UIViewController {
 
     private func setupView() {
         self.navigationItem.title = "DayViewController.navigationItem.title".localized
-        self.view.backgroundColor = #colorLiteral(red: 0.1248925701, green: 0.3067729473, blue: 0.781540215, alpha: 1)
+        self.view = BackgroundView(frame: self.view.frame)
         self.rootView.translatesAutoresizingMaskIntoConstraints = false
-        self.rootView.backgroundColor = .systemBackground
+        self.rootView.backgroundColor = .clear
         self.view.addSubview(rootView)
 
         NSLayoutConstraint.activate([
@@ -80,11 +80,12 @@ final class DayViewController: UIViewController {
 
         NSLayoutConstraint.activate([
             self.dayVisualView.topAnchor.constraint(equalTo: self.label.bottomAnchor),
-            self.dayVisualView.leadingAnchor.constraint(equalTo: self.rootView.leadingAnchor),
-            self.dayVisualView.trailingAnchor.constraint(equalTo: self.rootView.trailingAnchor),
+            self.dayVisualView.leadingAnchor.constraint(equalTo: self.rootView.leadingAnchor, constant: 8),
+            self.dayVisualView.trailingAnchor.constraint(equalTo: self.rootView.trailingAnchor, constant: -8),
             self.dayVisualView.heightAnchor.constraint(equalToConstant: 165),
         ])
-
+        self.dayVisualView.clipsToBounds = true
+        self.dayVisualView.layer.cornerRadius = 10
         self.setupDayVisualViewInfo()
     }
 
@@ -97,15 +98,19 @@ final class DayViewController: UIViewController {
         self.tableView.translatesAutoresizingMaskIntoConstraints = false
         self.tableView.backgroundColor = .clear
         self.tableView.allowsSelection = false
+        self.tableView.showsVerticalScrollIndicator = false
 
         self.rootView.addSubview(self.tableView)
 
         NSLayoutConstraint.activate([
             self.tableView.topAnchor.constraint(equalTo: self.dayVisualView.bottomAnchor, constant: 4),
-            self.tableView.leadingAnchor.constraint(equalTo: self.rootView.leadingAnchor),
-            self.tableView.trailingAnchor.constraint(equalTo: self.rootView.trailingAnchor),
+            self.tableView.leadingAnchor.constraint(equalTo: self.rootView.leadingAnchor, constant: 8),
+            self.tableView.trailingAnchor.constraint(equalTo: self.rootView.trailingAnchor, constant: -8),
             self.tableView.bottomAnchor.constraint(equalTo: self.rootView.bottomAnchor),
         ])
+
+        self.tableView.clipsToBounds = true
+        self.tableView.layer.cornerRadius = 10
     }
 
     private func setupDayVisualViewInfo() {

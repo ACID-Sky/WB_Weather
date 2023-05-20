@@ -45,7 +45,7 @@ final class WeatherViewController: UIPageViewController {
 
     /// Устанавливает фон, кнопки в навигейшнвью и pageController
     private func setupView() {
-        self.view.backgroundColor = #colorLiteral(red: 0.1248925701, green: 0.3067729473, blue: 0.781540215, alpha: 1)
+        self.view.backgroundColor = .systemBackground
         self.navigationItem.title = "WeatherViewController.navigationItem.title".localized
         self.navigationController?.navigationBar.tintColor = #colorLiteral(red: 0.1248925701, green: 0.3067729473, blue: 0.781540215, alpha: 1)
 

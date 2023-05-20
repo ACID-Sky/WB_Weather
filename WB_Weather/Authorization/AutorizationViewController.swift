@@ -23,7 +23,7 @@ final class AutorizationViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = #colorLiteral(red: 0.1248925701, green: 0.3067729473, blue: 0.781540215, alpha: 1)
+        self.view = BackgroundView()
         self.setupImage()
         self.setupFirstLabel()
         self.setupSecondLabel()

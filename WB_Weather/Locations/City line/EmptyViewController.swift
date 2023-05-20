@@ -13,7 +13,7 @@ class EmptyViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = .systemBackground
+        self.view = BackgroundView()
         self.setupImage()
     }
 

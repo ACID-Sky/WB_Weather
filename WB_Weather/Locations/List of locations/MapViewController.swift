@@ -23,7 +23,7 @@ final class MapViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = #colorLiteral(red: 0.9146655202, green: 0.9332792163, blue: 0.9809073806, alpha: 1)
+        self.view = BackgroundView()
         self.cLLocationManager.delegate = self
         self.requestAccessToLocation()
         self.setupLabel()

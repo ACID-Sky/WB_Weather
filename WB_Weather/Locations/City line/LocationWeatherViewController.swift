@@ -44,6 +44,7 @@ class LocationWeatherViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.view = BackgroundView(frame: self.view.frame)
         self.setupViewForPage()
         self.setupCityHeadView()
         self.setupDetailsView()
@@ -59,7 +60,7 @@ class LocationWeatherViewController: UIViewController {
     }
 
     private func setupViewForPage() {
-        self.vieForPage.backgroundColor = .systemBackground
+        self.vieForPage.backgroundColor = .clear
         self.vieForPage.translatesAutoresizingMaskIntoConstraints = false
 
         self.view.addSubview(self.vieForPage)

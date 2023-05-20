@@ -1,68 +1,53 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Bucket
-   uuid = "ABAA37C9-1A0D-4EB5-8941-B138A0BF5FB0"
+   uuid = "6B46EF54-8480-46E6-9993-89E67A44D1D6"
    type = "1"
    version = "2.0">
    <Breakpoints>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "35EBDCEB-8810-44AF-9B96-6958DC782A67"
+            uuid = "BEE5C015-AD0E-4983-89BD-4CFAE9E39DF2"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "WB_Weather/Locations/List of locations/MapViewController.swift"
+            filePath = "WB_Weather/Authorization/AutorizationViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "40"
-            endingLineNumber = "40"
-            landmarkName = "requestAccessToLocation()"
+            startingLineNumber = "26"
+            endingLineNumber = "26"
+            landmarkName = "viewDidLoad()"
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "35EBDCEB-8810-44AF-9B96-6958DC782A67 - f1eec2f0c023ca3b"
+                  uuid = "BEE5C015-AD0E-4983-89BD-4CFAE9E39DF2 - 6e0e4eeebbe429d8"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "WB_Weather.MapViewController.requestAccessToLocation() -&gt; ()"
+                  symbolName = "WB_Weather.AutorizationViewController.viewDidLoad() -&gt; ()"
                   moduleName = "WB_Weather"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/acid_sky/Desktop/Swift/WB_Weather/WB_Weather/Locations/List%20of%20locations/MapViewController.swift"
+                  urlString = "file:///Users/acid_sky/Desktop/Swift/WB_Weather/WB_Weather/Authorization/AutorizationViewController.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "31"
-                  endingLineNumber = "31"
-                  offsetFromSymbolStart = "82">
+                  startingLineNumber = "26"
+                  endingLineNumber = "26"
+                  offsetFromSymbolStart = "107">
                </Location>
                <Location
-                  uuid = "35EBDCEB-8810-44AF-9B96-6958DC782A67 - f1eec2f0c023f5f5"
+                  uuid = "BEE5C015-AD0E-4983-89BD-4CFAE9E39DF2 - 6e0e4eeebbe429b9"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "WB_Weather.MapViewController.requestAccessToLocation() -&gt; ()"
+                  symbolName = "WB_Weather.AutorizationViewController.viewDidLoad() -&gt; ()"
                   moduleName = "WB_Weather"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/acid_sky/Desktop/Swift/WB_Weather/WB_Weather/Locations/List%20of%20locations/MapViewController.swift"
+                  urlString = "file:///Users/acid_sky/Desktop/Swift/WB_Weather/WB_Weather/Authorization/AutorizationViewController.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "29"
-                  endingLineNumber = "29"
-                  offsetFromSymbolStart = "31">
-               </Location>
-               <Location
-                  uuid = "35EBDCEB-8810-44AF-9B96-6958DC782A67 - f1eec2f0c023cb02"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "WB_Weather.MapViewController.requestAccessToLocation() -&gt; ()"
-                  moduleName = "WB_Weather"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/acid_sky/Desktop/Swift/WB_Weather/WB_Weather/Locations/List%20of%20locations/MapViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "40"
-                  endingLineNumber = "40"
-                  offsetFromSymbolStart = "33">
+                  startingLineNumber = "27"
+                  endingLineNumber = "27"
+                  offsetFromSymbolStart = "90">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -70,62 +55,63 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "4A02C09E-571E-46DA-81AA-3438EBCD512F"
+            uuid = "38890B62-0825-4C84-BDA5-CCFD87DFA13B"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "WB_Weather/Locations/List of locations/ListOfLocationsViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "24"
+            endingLineNumber = "24"
+            landmarkName = "init()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "9A8C4440-6134-4F0C-A694-751048673933"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "WB_Weather/Locations/List of locations/MapViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "44"
-            endingLineNumber = "44"
-            landmarkName = "requestAccessToLocation()"
+            startingLineNumber = "26"
+            endingLineNumber = "26"
+            landmarkName = "viewDidLoad()"
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "4A02C09E-571E-46DA-81AA-3438EBCD512F - f1eec2f0c023cabf"
+                  uuid = "9A8C4440-6134-4F0C-A694-751048673933 - bdc41cec420e607b"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "WB_Weather.MapViewController.requestAccessToLocation() -&gt; ()"
+                  symbolName = "WB_Weather.MapViewController.viewDidLoad() -&gt; ()"
                   moduleName = "WB_Weather"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/acid_sky/Desktop/Swift/WB_Weather/WB_Weather/Locations/List%20of%20locations/MapViewController.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "35"
-                  endingLineNumber = "35"
-                  offsetFromSymbolStart = "248">
+                  startingLineNumber = "26"
+                  endingLineNumber = "26"
+                  offsetFromSymbolStart = "107">
                </Location>
                <Location
-                  uuid = "4A02C09E-571E-46DA-81AA-3438EBCD512F - f1eec2f0c023ca58"
+                  uuid = "9A8C4440-6134-4F0C-A694-751048673933 - bdc41cec420e607b"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "WB_Weather.MapViewController.requestAccessToLocation() -&gt; ()"
+                  symbolName = "WB_Weather.MapViewController.viewDidLoad() -&gt; ()"
                   moduleName = "WB_Weather"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/acid_sky/Desktop/Swift/WB_Weather/WB_Weather/Locations/List%20of%20locations/MapViewController.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "34"
-                  endingLineNumber = "34"
-                  offsetFromSymbolStart = "199">
-               </Location>
-               <Location
-                  uuid = "4A02C09E-571E-46DA-81AA-3438EBCD512F - f1eec2f0c023cb86"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "WB_Weather.MapViewController.requestAccessToLocation() -&gt; ()"
-                  moduleName = "WB_Weather"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/acid_sky/Desktop/Swift/WB_Weather/WB_Weather/Locations/List%20of%20locations/MapViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "44"
-                  endingLineNumber = "44"
-                  offsetFromSymbolStart = "139">
+                  startingLineNumber = "26"
+                  endingLineNumber = "26"
+                  offsetFromSymbolStart = "92">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -133,62 +119,62 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "7ECFE094-426D-4A6D-B221-271E50E10A70"
-            shouldBeEnabled = "Yes"
+            uuid = "10143A71-6D82-4446-BA39-3A8DBD444A23"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "WB_Weather/Locations/List of locations/MapViewController.swift"
+            filePath = "WB_Weather/Locations/City line/EmptyViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "49"
-            endingLineNumber = "49"
-            landmarkName = "requestAccessToLocation()"
+            startingLineNumber = "16"
+            endingLineNumber = "16"
+            landmarkName = "viewDidLoad()"
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "7ECFE094-426D-4A6D-B221-271E50E10A70 - f1eec2f0c023cb23"
+                  uuid = "10143A71-6D82-4446-BA39-3A8DBD444A23 - 38e09532481136b0"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "WB_Weather.MapViewController.requestAccessToLocation() -&gt; ()"
+                  symbolName = "WB_Weather.EmptyViewController.viewDidLoad() -&gt; ()"
                   moduleName = "WB_Weather"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/acid_sky/Desktop/Swift/WB_Weather/WB_Weather/Locations/List%20of%20locations/MapViewController.swift"
+                  urlString = "file:///Users/acid_sky/Desktop/Swift/WB_Weather/WB_Weather/Locations/City%20line/EmptyViewController.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "39"
-                  endingLineNumber = "39"
-                  offsetFromSymbolStart = "256">
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "90">
                </Location>
                <Location
-                  uuid = "7ECFE094-426D-4A6D-B221-271E50E10A70 - f1eec2f0c023cafd"
+                  uuid = "10143A71-6D82-4446-BA39-3A8DBD444A23 - 38e095324811376f"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "WB_Weather.MapViewController.requestAccessToLocation() -&gt; ()"
+                  symbolName = "WB_Weather.EmptyViewController.viewDidLoad() -&gt; ()"
                   moduleName = "WB_Weather"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/acid_sky/Desktop/Swift/WB_Weather/WB_Weather/Locations/List%20of%20locations/MapViewController.swift"
+                  urlString = "file:///Users/acid_sky/Desktop/Swift/WB_Weather/WB_Weather/Locations/City%20line/EmptyViewController.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "37"
-                  endingLineNumber = "37"
-                  offsetFromSymbolStart = "254">
+                  startingLineNumber = "17"
+                  endingLineNumber = "17"
+                  offsetFromSymbolStart = "104">
                </Location>
                <Location
-                  uuid = "7ECFE094-426D-4A6D-B221-271E50E10A70 - f1eec2f0c023c869"
+                  uuid = "10143A71-6D82-4446-BA39-3A8DBD444A23 - 38e095324811376f"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "WB_Weather.MapViewController.requestAccessToLocation() -&gt; ()"
+                  symbolName = "WB_Weather.EmptyViewController.viewDidLoad() -&gt; ()"
                   moduleName = "WB_Weather"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/acid_sky/Desktop/Swift/WB_Weather/WB_Weather/Locations/List%20of%20locations/MapViewController.swift"
+                  urlString = "file:///Users/acid_sky/Desktop/Swift/WB_Weather/WB_Weather/Locations/City%20line/EmptyViewController.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "49"
-                  endingLineNumber = "49"
-                  offsetFromSymbolStart = "279">
+                  startingLineNumber = "17"
+                  endingLineNumber = "17"
+                  offsetFromSymbolStart = "92">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -196,271 +182,18 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "65E460D9-5A4F-4CE7-8802-13064C28B2B6"
+            uuid = "A24877F1-EBF1-40CB-9D20-CF7ABE125B75"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "WB_Weather/Locations/List of locations/MapViewController.swift"
+            filePath = "WB_Weather/BackgroundView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "268"
-            endingLineNumber = "268"
-            landmarkName = "mapView(_:rendererFor:)"
+            startingLineNumber = "16"
+            endingLineNumber = "16"
+            landmarkName = "init(frame:)"
             landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "6924AE0A-6711-4B2E-8BF4-2B5BBC024681"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "WB_Weather/Locations/List of locations/MapViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "248"
-            endingLineNumber = "248"
-            landmarkName = "locationManager(_:didUpdateLocations:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "7DD98394-6476-464B-BC3B-3FEC4D6A0ADE"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "WB_Weather/Locations/List of locations/MapViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "249"
-            endingLineNumber = "249"
-            landmarkName = "locationManager(_:didUpdateLocations:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "F596AE06-5CD0-45D6-971E-B7AA2AB94113"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "WB_Weather/Locations/List of locations/MapViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "256"
-            endingLineNumber = "256"
-            landmarkName = "mapView(_:didSelect:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "2DDB87BD-02B1-492C-B684-78176FD969DA"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "WB_Weather/Locations/List of locations/MapViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "263"
-            endingLineNumber = "263"
-            landmarkName = "mapView(_:didDeselect:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "393FEDE6-7987-45DA-9300-A6B3C8CD7DA2"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "WB_Weather/CoreDataService/CoreDataLocationService.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "237"
-            endingLineNumber = "237"
-            landmarkName = "deleteLocation(for:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "393FEDE6-7987-45DA-9300-A6B3C8CD7DA2 - d2fe835681f3189b"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "WB_Weather.CoreDataLocationServiceImp.deleteLocation(for: Swift.Int32) -&gt; ()"
-                  moduleName = "WB_Weather"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/acid_sky/Desktop/Swift/WB_Weather/WB_Weather/CoreDataService/CoreDataLocationService.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "237"
-                  endingLineNumber = "237"
-                  offsetFromSymbolStart = "368">
-               </Location>
-               <Location
-                  uuid = "393FEDE6-7987-45DA-9300-A6B3C8CD7DA2 - d2fe835681f3189b"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "WB_Weather.CoreDataLocationServiceImp.deleteLocation(for: Swift.Int32) -&gt; ()"
-                  moduleName = "WB_Weather"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/acid_sky/Desktop/Swift/WB_Weather/WB_Weather/CoreDataService/CoreDataLocationService.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "237"
-                  endingLineNumber = "237"
-                  offsetFromSymbolStart = "429">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "B608D545-26E2-4819-A448-982FCE273D13"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "WB_Weather/Locations/City line/WeatherViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "100"
-            endingLineNumber = "100"
-            landmarkName = "requestAccessToLocation()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "239FD9DE-12D3-4AD9-BA2E-7E350CB1B254"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "WB_Weather/Locations/City line/WeatherViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "409"
-            endingLineNumber = "409"
-            landmarkName = "locationManager(_:didFailWithError:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "239FD9DE-12D3-4AD9-BA2E-7E350CB1B254 - 1b7b45c44c521d2f"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "WB_Weather.WeatherViewController.locationManager(_: __C.CLLocationManager, didFailWithError: Swift.Error) -&gt; ()"
-                  moduleName = "WB_Weather"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/acid_sky/Desktop/Swift/WB_Weather/WB_Weather/Locations/City%20line/WeatherViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "409"
-                  endingLineNumber = "409"
-                  offsetFromSymbolStart = "291">
-               </Location>
-               <Location
-                  uuid = "239FD9DE-12D3-4AD9-BA2E-7E350CB1B254 - 6a357f24e01bb547"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "WB_Weather.WeatherViewController.locationManager(_: __C.CLLocationManager, didUpdateLocations: Swift.Array&lt;__C.CLLocation&gt;) -&gt; ()"
-                  moduleName = "WB_Weather"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/acid_sky/Desktop/Swift/WB_Weather/WB_Weather/Locations/City%20line/WeatherViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "410"
-                  endingLineNumber = "410"
-                  offsetFromSymbolStart = "124">
-               </Location>
-               <Location
-                  uuid = "239FD9DE-12D3-4AD9-BA2E-7E350CB1B254 - 24bfedabb1aca7fa"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "WB_Weather.WeatherViewController.didTapRightButton2() -&gt; ()"
-                  moduleName = "WB_Weather"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/acid_sky/Desktop/Swift/WB_Weather/WB_Weather/Locations/City%20line/WeatherViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "409"
-                  endingLineNumber = "409"
-                  offsetFromSymbolStart = "126">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "D23117E7-C608-4FF9-A43B-17DD07AF39F3"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "WB_Weather/Locations/City line/WeatherViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "417"
-            endingLineNumber = "417"
-            landmarkName = "locationManager(_:didUpdateLocations:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "D23117E7-C608-4FF9-A43B-17DD07AF39F3 - 6a357f24e01bb26c"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "WB_Weather.WeatherViewController.locationManager(_: __C.CLLocationManager, didUpdateLocations: Swift.Array&lt;__C.CLLocation&gt;) -&gt; ()"
-                  moduleName = "WB_Weather"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/acid_sky/Desktop/Swift/WB_Weather/WB_Weather/Locations/City%20line/WeatherViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "417"
-                  endingLineNumber = "417"
-                  offsetFromSymbolStart = "493">
-               </Location>
-               <Location
-                  uuid = "D23117E7-C608-4FF9-A43B-17DD07AF39F3 - 6a357f24e01bb26c"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "WB_Weather.WeatherViewController.locationManager(_: __C.CLLocationManager, didUpdateLocations: Swift.Array&lt;__C.CLLocation&gt;) -&gt; ()"
-                  moduleName = "WB_Weather"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/acid_sky/Desktop/Swift/WB_Weather/WB_Weather/Locations/City%20line/WeatherViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "417"
-                  endingLineNumber = "417"
-                  offsetFromSymbolStart = "616">
-               </Location>
-               <Location
-                  uuid = "D23117E7-C608-4FF9-A43B-17DD07AF39F3 - efe5d55d3e101fd4"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "WB_Weather.WeatherViewController.pageViewController(_: __C.UIPageViewController, viewControllerBefore: __C.UIViewController) -&gt; Swift.Optional&lt;__C.UIViewController&gt;"
-                  moduleName = "WB_Weather"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/acid_sky/Desktop/Swift/WB_Weather/WB_Weather/Locations/City%20line/WeatherViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "418"
-                  endingLineNumber = "418"
-                  offsetFromSymbolStart = "125">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
+</Bucket>

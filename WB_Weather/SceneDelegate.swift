@@ -20,7 +20,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
         let navigationBarAppearance = UINavigationBarAppearance()
         navigationBarAppearance.configureWithOpaqueBackground()
-        navigationBarAppearance.backgroundColor = .secondarySystemBackground
+        navigationBarAppearance.backgroundColor =  .clear
         UINavigationBar.appearance().scrollEdgeAppearance = navigationBarAppearance
 
         let networkService = NetworkService()
