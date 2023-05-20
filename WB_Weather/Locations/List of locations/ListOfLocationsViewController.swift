@@ -31,7 +31,7 @@ class ListOfLocationsViewController: UIViewController {
     }
 
     private func setupShowOnMapButton() {
-        let title = NSLocalizedString("ListOfLocationsViewController.showOnMapButton.setTitle", comment: "Show locations on the map")
+        let title = "ListOfLocationsViewController.showOnMapButton.setTitle".localized
         self.showOnMapButton.translatesAutoresizingMaskIntoConstraints = false
         self.showOnMapButton.backgroundColor = #colorLiteral(red: 0.1248925701, green: 0.3067729473, blue: 0.781540215, alpha: 1)
         self.showOnMapButton.setTitle(title, for: .normal)
@@ -116,7 +116,7 @@ extension ListOfLocationsViewController: UITableViewDelegate {
         guard let deletedLocation = self.coreDataLocationService.getObject(index: locationIndex) else { return nil}
         guard deletedLocation.locationID != 0 else { return nil}
 
-        let title = NSLocalizedString("delete.button", comment: "Delete")
+        let title = "delete.button".localized
         
         let deleteAction = UIContextualAction(style: .destructive, title: title) { _, _, _ in
             self.coreDataLocationService.deleteLocation(for: deletedLocation.locationID)

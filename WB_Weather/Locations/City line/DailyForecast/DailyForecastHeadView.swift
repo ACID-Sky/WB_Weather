@@ -34,7 +34,7 @@ final class DailyForecastHeadView: UIView {
         self.label.translatesAutoresizingMaskIntoConstraints = false
         self.label.clipsToBounds = true
         self.label.isUserInteractionEnabled = true
-        self.label.text = NSLocalizedString("DailyForecastHeadView.label.text", comment: "Daily forecast")
+        self.label.text = "DailyForecastHeadView.label.text".localized
         self.label.font = UIFont.systemFont(ofSize: 14, weight: .semibold)
 
         self.addSubview(self.label)
@@ -50,7 +50,7 @@ final class DailyForecastHeadView: UIView {
         self.daysLabel.translatesAutoresizingMaskIntoConstraints = false
         self.daysLabel.clipsToBounds = true
         self.daysLabel.isUserInteractionEnabled = true
-        self.daysLabel.text = "25" + NSLocalizedString("days", comment: "days")
+        self.daysLabel.text = "25" + "days".localized
         self.daysLabel.font = UIFont.systemFont(ofSize: 14, weight: .regular)
 
         self.addSubview(self.daysLabel)
@@ -77,6 +77,6 @@ final class DailyForecastHeadView: UIView {
 
 extension DailyForecastHeadView {
     func setupDays(count: Int) {
-        self.daysLabel.text = String(count) + NSLocalizedString("days", comment: "days")
+        self.daysLabel.text = String(count) + "days".localized
     }
 }

@@ -54,7 +54,7 @@ final class MapViewController: UIViewController {
     }
 
     private func setupLabel() {
-        let text = NSLocalizedString("MapViewController.label.text", comment: "Description how work with map")
+        let text = "MapViewController.label.text".localized
         self.label.translatesAutoresizingMaskIntoConstraints = false
         self.label.clipsToBounds = true
         self.label.numberOfLines = 0
@@ -74,25 +74,25 @@ final class MapViewController: UIViewController {
     }
 
     private func setupButtonWithMenuMapType() {
-        let first = UIAction(title: NSLocalizedString("MapViewController.mapView.mapType.standard", comment: "")) { _ in
+        let first = UIAction(title: "MapViewController.mapView.mapType.standard".localized) { _ in
             self.mapView.mapType = .standard
         }
-        let second = UIAction(title: NSLocalizedString("MapViewController.mapView.mapType.satellite", comment: "")) { _ in
+        let second = UIAction(title: "MapViewController.mapView.mapType.satellite".localized) { _ in
             self.mapView.mapType = .satellite
         }
-        let third = UIAction(title: NSLocalizedString("MapViewController.mapView.mapType.hybrid", comment: "")) { _ in
+        let third = UIAction(title: "MapViewController.mapView.mapType.hybrid".localized) { _ in
             self.mapView.mapType = .hybrid
         }
-        let four = UIAction(title: NSLocalizedString("MapViewController.mapView.mapType.satelliteFlyover", comment: "")) { _ in
+        let four = UIAction(title: "MapViewController.mapView.mapType.satelliteFlyover".localized) { _ in
             self.mapView.mapType = .satelliteFlyover
         }
-        let fifth = UIAction(title: NSLocalizedString("MapViewController.mapView.mapType.mutedStandard", comment: "")) { _ in
+        let fifth = UIAction(title: "MapViewController.mapView.mapType.mutedStandard".localized) { _ in
             self.mapView.mapType = .mutedStandard
         }
 
         let elements = [first, second, third, four, fifth]
 
-        let title = NSLocalizedString("MapViewController.mapView.menuMapType", comment: "Map type")
+        let title = "MapViewController.mapView.menuMapType".localized
 
         let menuMapType = UIMenu(title: title, children: elements)
 
@@ -117,26 +117,26 @@ final class MapViewController: UIViewController {
     }
 
     private func setupButtonWithMenuRouteType() {
-        let first = UIAction(title: NSLocalizedString("MapViewController.mapView.transportType.any", comment: "")) { _ in
+        let first = UIAction(title: "MapViewController.mapView.transportType.any".localized) { _ in
             self.transportType = .any
             self.addRoute(to: self.directions)
         }
-        let second = UIAction(title: NSLocalizedString("MapViewController.mapView.transportType.automobile", comment: "")) { _ in
+        let second = UIAction(title: "MapViewController.mapView.transportType.automobile".localized) { _ in
             self.transportType = .automobile
             self.addRoute(to: self.directions)
         }
-        let third = UIAction(title: NSLocalizedString("MapViewController.mapView.transportType.transit", comment: "")) { _ in
+        let third = UIAction(title: "MapViewController.mapView.transportType.transit".localized) { _ in
             self.transportType = .transit
             self.addRoute(to: self.directions)
         }
-        let four = UIAction(title: NSLocalizedString("MapViewController.mapView.transportType.walking", comment: "")) { _ in
+        let four = UIAction(title: "MapViewController.mapView.transportType.walking".localized) { _ in
             self.transportType = .walking
             self.addRoute(to: self.directions)
         }
 
         let elements = [first, second, third, four]
 
-        let title = NSLocalizedString("MapViewController.mapView.menuRouteType", comment: "Route type")
+        let title = "MapViewController.mapView.menuRouteType".localized
 
         let menuRouteType = UIMenu(title: title, children: elements)
 
@@ -217,8 +217,8 @@ final class MapViewController: UIViewController {
             guard let response = response else {
                 if error != nil {
                     let alert = Alerts().showAlert(
-                        with: NSLocalizedString("MapViewController.alert.title", comment: "alert title"),
-                        message: NSLocalizedString("MapViewController.alert.message", comment: "alert message"),
+                        with: "MapViewController.alert.title".localized,
+                        message: "MapViewController.alert.message".localized,
                         preferredStyle: .alert
                     )
 

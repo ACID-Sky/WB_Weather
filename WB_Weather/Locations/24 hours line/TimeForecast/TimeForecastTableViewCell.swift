@@ -177,9 +177,9 @@ final class TimeForecastTableViewCell: UITableViewCell {
         self.dayForecastLabel.font = UIFont.systemFont(ofSize: 14, weight: .regular)
         self.dayForecastLabel.textAlignment = .left
 
-        let windLabel = self.setupWeatherLabel(with: NSLocalizedString("forecast.wind", comment: "Wind"))
-        let rainLabel = self.setupWeatherLabel(with: NSLocalizedString("forecast.rainfall", comment: "Rainfall"))
-        let cloudLabel = self.setupWeatherLabel(with: NSLocalizedString("forecast.cloudy", comment: "Cloudy"))
+        let windLabel = self.setupWeatherLabel(with: "forecast.wind".localized)
+        let rainLabel = self.setupWeatherLabel(with: "forecast.rainfall".localized)
+        let cloudLabel = self.setupWeatherLabel(with: "forecast.cloudy".localized)
 
         stack.addArrangedSubview(self.dayForecastLabel)
         stack.addArrangedSubview(windLabel)
@@ -254,7 +254,7 @@ extension TimeForecastTableViewCell {
         let time = Date(timeIntervalSince1970: weatherForecastModel.dateOfForecast)
         let dateFormatter = DateFormatter()
         dateFormatter.timeZone = TimeZone(secondsFromGMT: timezone)
-        dateFormatter.locale = Locale(identifier: NSLocalizedString("dateFormatter.locale", comment: "dateFormatter locale"))
+        dateFormatter.locale = Locale(identifier: "dateFormatter.locale".localized)
         dateFormatter.dateFormat = ValueConverter.shared.getFormat(timeStyleShort: true)
         self.timeLabel.text = dateFormatter.string(from: time)
 
@@ -266,7 +266,7 @@ extension TimeForecastTableViewCell {
 
         self.currentTempLabel.text = ValueConverter.shared.getTemp(for: weatherForecastModel.temp) + "º"
         self.dayForecastLabel.text = weatherForecastModel.weatherDescription
-        self.feelsLikeLabel.text = NSLocalizedString("forecast.feelsLike", comment: "Feels like ") +
+        self.feelsLikeLabel.text = "forecast.feelsLike".localized +
         ValueConverter.shared.getTemp(for: weatherForecastModel.feelsLike) +
         "º"
         let windDirection = CommonFunctions().getWindDirection(for: weatherForecastModel.windDeg)

@@ -110,7 +110,7 @@ extension NetworkService: NetworkServicePorotocol {
                 URLQueryItem(name: "apikey", value: "411db0cc-8c04-474f-8d94-803938f91fad"),
                 URLQueryItem(name: "kind", value: "locality"),
                 URLQueryItem(name: "results", value: "1"),
-                URLQueryItem(name: "lang", value: NSLocalizedString("urlComponents.queryItems.geocode.lang", comment: "code of language for geocode")),
+                URLQueryItem(name: "lang", value: "urlComponents.queryItems.geocode.lang".localized),
             ]
         case .cuurentForecast, .daysForecast:
             urlComponents.host = "api.openweathermap.org"
@@ -118,7 +118,7 @@ extension NetworkService: NetworkServicePorotocol {
                 URLQueryItem(name: "lat", value: location.locationLatitude),
                 URLQueryItem(name: "lon", value: location.locationLongitude),
                 URLQueryItem(name: "units", value: "metric"),
-                URLQueryItem(name: "lang", value: NSLocalizedString("urlComponents.queryItems.forecast.lang", comment: "code of language for forecast")),
+                URLQueryItem(name: "lang", value: "urlComponents.queryItems.forecast.lang".localized),
                 URLQueryItem(name: "appid", value: "6cc466710a9af41fc70603dbd8eff188"),
             ]
         }

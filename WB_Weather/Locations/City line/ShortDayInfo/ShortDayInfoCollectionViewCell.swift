@@ -84,7 +84,7 @@ final class ShortDayInfoCollectionViewCell: UICollectionViewCell {
         }
         let dateFormatter = DateFormatter()
         dateFormatter.timeZone = TimeZone(secondsFromGMT: Int(weatherForecastModel.location?.currentWeather?.timezone ?? 0))
-        dateFormatter.locale = Locale(identifier: NSLocalizedString("dateFormatter.locale", comment: "dateFormatter locale"))
+        dateFormatter.locale = Locale(identifier: "dateFormatter.locale".localized)
         dateFormatter.dateFormat = ValueConverter.shared.getFormat(timeStyleShort: true)
 
         self.timeLabel.text = dateFormatter.string(from: time)

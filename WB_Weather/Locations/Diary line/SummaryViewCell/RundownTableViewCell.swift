@@ -114,26 +114,11 @@ class RundownTableViewCell: UITableViewCell {
 
         let paramsArray = [
             (label: self.dayForecastLabel, imageName: "", descriptionText: ""),
-            (label: self.feelsLabel, imageName: "Feels like", descriptionText: NSLocalizedString(
-                "RundownTableViewCell.feelsLabel",
-                comment: "Feels like"
-            )),
-            (label: self.windLabel, imageName:  "windcolor", descriptionText: NSLocalizedString(
-                "RundownTableViewCell.windLabel",
-                comment: "Wind"
-            )),
-            (label: self.ufIndexLabel, imageName: "Sun", descriptionText: NSLocalizedString(
-                "RundownTableViewCell.ufIndexLabel",
-                comment: "UV index"
-            )),
-            (label: self.rainLabel, imageName: "rain", descriptionText: NSLocalizedString(
-                "RundownTableViewCell.rainLabel",
-                comment: "Possibility of rain"
-            )),
-            (label: self.cloudyLabel, imageName: "cloudBlue", descriptionText: NSLocalizedString(
-                "RundownTableViewCell.cloudyLabel",
-                comment: "Cloudiness"
-            ))
+            (label: self.feelsLabel, imageName: "Feels like", descriptionText: "RundownTableViewCell.feelsLabel".localized),
+            (label: self.windLabel, imageName:  "windcolor", descriptionText: "RundownTableViewCell.windLabel".localized),
+            (label: self.ufIndexLabel, imageName: "Sun", descriptionText: "RundownTableViewCell.ufIndexLabel".localized),
+            (label: self.rainLabel, imageName: "rain", descriptionText: "RundownTableViewCell.rainLabel".localized),
+            (label: self.cloudyLabel, imageName: "cloudBlue", descriptionText: "RundownTableViewCell.cloudyLabel".localized)
         ]
 
         for (index, params) in paramsArray.enumerated() {
@@ -221,7 +206,7 @@ extension RundownTableViewCell {
     /// Передача прогноза погоды для установки значений в ячейке
     /// - Parameter forecast: Прогноза средней погоды за часть дня
     func setupForecast(with forecast: Forecast){
-        let forecastText = NSLocalizedString(forecast.groupOfWeather.rawValue, comment: "groupOfWeather.___")
+        let forecastText = forecast.groupOfWeather.rawValue.localized
         self.timeOfDayLabel.text = forecast.partOfDay
         self.weatherImageView.image = forecast.groupOfWeatherImage
         self.tempLabel.text = forecast.temText

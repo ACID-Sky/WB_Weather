@@ -43,18 +43,17 @@ struct ValueConverter {
         }
     }
 
-    func getWindSpeed(for temp: Double) -> String {
+    func getWindSpeed(for speed: Double) -> String {
         let windSpeedInMi = self.userDefaults.bool(forKey: "windSpeedInMi")
 
-        let measure = Measurement(value: temp, unit: UnitSpeed.metersPerSecond)
+        let measure = Measurement(value: speed, unit: UnitSpeed.metersPerSecond)
 
-        let formatter = MeasurementFormatter()
         if windSpeedInMi {
             let converted = measure.converted(to: .milesPerHour)
-            return String(Int(converted.value)) + NSLocalizedString("windSpeed."+converted.unit.symbol, comment: "milesPerHour")
+            return String(Int(converted.value)) + ("windSpeed."+converted.unit.symbol).localized
 
         } else {
-            return String(Int(measure.value)) + NSLocalizedString("windSpeed."+measure.unit.symbol, comment: "m/s")
+            return String(Int(measure.value)) + ("windSpeed."+measure.unit.symbol).localized
         }
     }
 

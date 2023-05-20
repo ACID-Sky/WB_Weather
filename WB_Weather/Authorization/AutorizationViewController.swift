@@ -55,7 +55,7 @@ final class AutorizationViewController: UIViewController {
         self.fistlabel.clipsToBounds = true
         self.fistlabel.isUserInteractionEnabled = true
         self.fistlabel.numberOfLines = 0
-        self.fistlabel.text = NSLocalizedString("AutorizationViewController.fistlabel.text", comment: "Allow app to use location data")
+        self.fistlabel.text = "AutorizationViewController.fistlabel.text".localized
         self.fistlabel.font = UIFont.systemFont(ofSize: 16, weight: .semibold)
 
         self.view.addSubview(self.fistlabel)
@@ -73,7 +73,7 @@ final class AutorizationViewController: UIViewController {
         self.secondLabel.clipsToBounds = true
         self.secondLabel.isUserInteractionEnabled = true
         self.secondLabel.numberOfLines = 0
-        self.secondLabel.text = NSLocalizedString("AutorizationViewController.secondLabel.text", comment: "description why user shuld allow the location data")
+        self.secondLabel.text = "AutorizationViewController.secondLabel.text".localized
         self.secondLabel.font = UIFont.systemFont(ofSize: 14, weight: .regular)
 
         self.view.addSubview(self.secondLabel)
@@ -87,7 +87,7 @@ final class AutorizationViewController: UIViewController {
     }
     
     private func setupAcceptButton() {
-        let text = NSLocalizedString("AutorizationViewController.acceptButton.setTitle", comment: "title on button")
+        let text = "AutorizationViewController.acceptButton.setTitle".localized
         self.acceptButton.setTitle(text, for: .normal)
         self.acceptButton.setTitleColor(.systemBackground, for: .normal)
         self.acceptButton.backgroundColor = .systemOrange
@@ -110,7 +110,7 @@ final class AutorizationViewController: UIViewController {
         self.refusalLabel.translatesAutoresizingMaskIntoConstraints = false
         self.refusalLabel.clipsToBounds = true
         self.refusalLabel.isUserInteractionEnabled = true
-        self.refusalLabel.text = NSLocalizedString("AutorizationViewController.refusalLabel.text", comment: "user don't want allow this location")
+        self.refusalLabel.text = "AutorizationViewController.refusalLabel.text".localized
         self.refusalLabel.font = UIFont.systemFont(ofSize: 14, weight: .semibold)
 
         self.view.addSubview(self.refusalLabel)

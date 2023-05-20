@@ -47,7 +47,7 @@ struct CommonFunctions {
             }
         }()
         dateFormatter.timeZone = TimeZone(secondsFromGMT:timezone)
-        dateFormatter.locale = Locale(identifier: NSLocalizedString("dateFormatter.locale", comment: "dateFormatter locale")) 
+        dateFormatter.locale = Locale(identifier: "dateFormatter.locale".localized)
         dateFormatter.dateFormat = dateFormat
 
         let nowOnGreenwich = Int(Date().timeIntervalSince1970)
@@ -80,9 +80,9 @@ struct CommonFunctions {
             case .allDay:
                 return ""
             case .day:
-                return NSLocalizedString("partOFDay.Day", comment: "Day")
+                return "partOFDay.Day".localized
             case .night:
-                return NSLocalizedString("partOFDay.Night", comment: "Night")
+                return "partOFDay.Night".localized
             }
         }()
 
@@ -90,18 +90,18 @@ struct CommonFunctions {
             let dayForecast = Forecast(
                 dateText: dateFormatter.string(from: date),
                 probabilityOfPrecipitationText: "??%",
-                weatherDescription: NSLocalizedString("forecast.weatherDescription.unknown", comment: "is't data"),
-                minTempText: NSLocalizedString("minTempText", comment: "minº"),
-                maxTempText: NSLocalizedString("maxTempText", comment: "maxº"),
+                weatherDescription: "forecast.weatherDescription.unknown".localized,
+                minTempText: "minTempText".localized,
+                maxTempText: "maxTempText".localized,
                 partOfDay: partOfdayText,
                 groupOfWeather: .unknow,
                 groupOfWeatherImage: UIImage(systemName: "globe.europe.africa.fill")!,
                 temText: "??º",
                 feelsLikeText: "??º",
                 feelsLikeImage: UIImage(systemName: "thermometer.medium")!,
-                windText: NSLocalizedString("forecast.dontKnow", comment: "We don't know"),
-                UIText: NSLocalizedString("forecast.dontKnow", comment: "We don't know"),
-                humidityText: NSLocalizedString("forecast.dontKnow", comment: "We don't know"),
+                windText: "forecast.dontKnow".localized,
+                UIText: "forecast.dontKnow".localized,
+                humidityText: "forecast.dontKnow".localized,
                 cloudy: "??%"
             )
             return dayForecast
@@ -191,7 +191,7 @@ struct CommonFunctions {
         let dayForecast = Forecast(
             dateText: dateFormatter.string(from: date),
             probabilityOfPrecipitationText: String(averagePOP) + "%",
-            weatherDescription: findDayForecasts[0].weatherDescription ?? NSLocalizedString("forecast.weatherDescription.unknown", comment: "is't data"),
+            weatherDescription: findDayForecasts[0].weatherDescription ?? "forecast.weatherDescription.unknown".localized,
             minTempText: ValueConverter.shared.getTemp(for: minTemp) + "º",
             maxTempText: ValueConverter.shared.getTemp(for: maxTemp) + "º",
             partOfDay: partOfdayText,
@@ -201,7 +201,7 @@ struct CommonFunctions {
             feelsLikeText: ValueConverter.shared.getTemp(for: averegeFellsLike) + "º",
             feelsLikeImage: feelsLikeImage,
             windText: ValueConverter.shared.getWindSpeed(for: averegeWind) + " " + averegeWindDegree,
-            UIText: NSLocalizedString("forecast.dontKnow", comment: "We don't know"),
+            UIText: "forecast.dontKnow".localized,
             humidityText: String(averegeHumidity) + "%",
             cloudy: String(averedgeCloudy)  + "%"
         )
@@ -216,51 +216,51 @@ struct CommonFunctions {
             degree > 348.75 &&
             degree <= 360.0 &&
             degree <= 11.25 {
-            return NSLocalizedString("windDirection.N", comment: "N")
+            return "windDirection.N".localized
         } else if degree > 11.25 &&
                     degree <= 33.75 {
-            return NSLocalizedString("windDirection.NNE", comment: "NNE")
+            return "windDirection.NNE".localized
         } else if degree > 33.75 &&
                     degree <= 56.25 {
-            return NSLocalizedString("windDirection.NE", comment: "NE")
+            return "windDirection.NE".localized
         } else if degree > 56.25 &&
                     degree <= 78.75 {
-            return NSLocalizedString("windDirection.ENE", comment: "ENE")
+            return "windDirection.ENE".localized
         } else if degree > 78.75 &&
                     degree <= 102.25 {
-            return NSLocalizedString("windDirection.E", comment: "E")
+            return "windDirection.E".localized
         } else if degree > 101.25 &&
                     degree <= 123.75 {
-            return NSLocalizedString("windDirection.ESE", comment: "ESE")
+            return "windDirection.ESE".localized
         } else if degree > 123.75 &&
                     degree <= 146.25 {
-            return NSLocalizedString("windDirection.SE", comment: "SE")
+            return "windDirection.SE".localized
         } else if degree > 146.25 &&
                     degree <= 168.75 {
-            return NSLocalizedString("windDirection.SSE", comment: "SSE")
+            return "windDirection.SSE".localized
         } else if degree > 168.75 &&
                     degree <= 191.25 {
-            return NSLocalizedString("windDirection.S", comment: "S")
+            return "windDirection.S".localized
         } else if degree > 191.25 &&
                     degree <= 213.75 {
-            return NSLocalizedString("windDirection.SSW", comment: "SSW")
+            return "windDirection.SSW".localized
         } else if degree > 213.75 &&
                     degree <= 236.25 {
-            return NSLocalizedString("windDirection.SW", comment: "SW")
+            return "windDirection.SW".localized
         } else if degree > 236.25 &&
                     degree <= 258.75 {
-            return NSLocalizedString("windDirection.WSW", comment: "WSW")
+            return "windDirection.WSW".localized
         } else if degree > 258.75 &&
                     degree <= 281.25 {
-            return NSLocalizedString("windDirection.W", comment: "W")
+            return "windDirection.W".localized
         } else if degree > 281.25 &&
                     degree <= 303.75 {
-            return NSLocalizedString("windDirection.WNW", comment: "WNW")
+            return "windDirection.WNW".localized
         } else if degree > 303.75 &&
                     degree <= 326.25 {
-            return NSLocalizedString("windDirection.NW", comment: "NW")
+            return "windDirection.NW".localized
         } else {
-            return NSLocalizedString("windDirection.NNW", comment: "NNW")
+            return "windDirection.NNW".localized
         }
     }
 
