@@ -1,0 +1,8 @@
+/* 
+  InfoPlist.strings
+  WB_Weather
+
+  Created by Лёха Небесный on 19.05.2023.
+  
+*/
+"NSLocationWhenInUseUsageDescription" = "Please allow access to your location for automatic weather output in the region where you are.";

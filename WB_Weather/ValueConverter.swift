@@ -47,12 +47,14 @@ struct ValueConverter {
         let windSpeedInMi = self.userDefaults.bool(forKey: "windSpeedInMi")
 
         let measure = Measurement(value: temp, unit: UnitSpeed.metersPerSecond)
+
+        let formatter = MeasurementFormatter()
         if windSpeedInMi {
             let converted = measure.converted(to: .milesPerHour)
-            return String(Int(converted.value)) + converted.unit.symbol
+            return String(Int(converted.value)) + NSLocalizedString("windSpeed."+converted.unit.symbol, comment: "milesPerHour")
 
         } else {
-            return String(Int(measure.value)) + measure.unit.symbol
+            return String(Int(measure.value)) + NSLocalizedString("windSpeed."+measure.unit.symbol, comment: "m/s")
         }
     }
 
@@ -77,15 +79,5 @@ struct ValueConverter {
             }
         }
     }
-
-    func getLocal() -> String {
-        let timeFormat12 = self.userDefaults.bool(forKey: "timeFormat12")
-        if timeFormat12 {
-            return "en_US"
-        } else {
-           return "ru_RU"
-        }
-    }
-
 }
 

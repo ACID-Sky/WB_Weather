@@ -32,7 +32,7 @@ final class DetailsView: UIView {
         self.label.translatesAutoresizingMaskIntoConstraints = false
         self.label.clipsToBounds = true
         self.label.isUserInteractionEnabled = true
-        self.label.text = "More info for 24 hours"
+        self.label.text = NSLocalizedString("DetailsView.label.text", comment: "More info for 24 hours")
         self.label.font = UIFont.systemFont(ofSize: 14, weight: .regular)
 
         self.addSubview(self.label)

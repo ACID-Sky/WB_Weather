@@ -177,9 +177,9 @@ final class TimeForecastTableViewCell: UITableViewCell {
         self.dayForecastLabel.font = UIFont.systemFont(ofSize: 14, weight: .regular)
         self.dayForecastLabel.textAlignment = .left
 
-        let windLabel = self.setupWeatherLabel(with: "Wind")
-        let rainLabel = self.setupWeatherLabel(with: "Rainfall")
-        let cloudLabel = self.setupWeatherLabel(with: "Cloudy")
+        let windLabel = self.setupWeatherLabel(with: NSLocalizedString("forecast.wind", comment: "Wind"))
+        let rainLabel = self.setupWeatherLabel(with: NSLocalizedString("forecast.rainfall", comment: "Rainfall"))
+        let cloudLabel = self.setupWeatherLabel(with: NSLocalizedString("forecast.cloudy", comment: "Cloudy"))
 
         stack.addArrangedSubview(self.dayForecastLabel)
         stack.addArrangedSubview(windLabel)
@@ -254,7 +254,7 @@ extension TimeForecastTableViewCell {
         let time = Date(timeIntervalSince1970: weatherForecastModel.dateOfForecast)
         let dateFormatter = DateFormatter()
         dateFormatter.timeZone = TimeZone(secondsFromGMT: timezone)
-        dateFormatter.locale = Locale(identifier: ValueConverter.shared.getLocal())
+        dateFormatter.locale = Locale(identifier: NSLocalizedString("dateFormatter.locale", comment: "dateFormatter locale"))
         dateFormatter.dateFormat = ValueConverter.shared.getFormat(timeStyleShort: true)
         self.timeLabel.text = dateFormatter.string(from: time)
 
@@ -266,7 +266,9 @@ extension TimeForecastTableViewCell {
 
         self.currentTempLabel.text = ValueConverter.shared.getTemp(for: weatherForecastModel.temp) + "º"
         self.dayForecastLabel.text = weatherForecastModel.weatherDescription
-        self.feelsLikeLabel.text = "Feels like " + ValueConverter.shared.getTemp(for: weatherForecastModel.feelsLike) + "º"
+        self.feelsLikeLabel.text = NSLocalizedString("forecast.feelsLike", comment: "Feels like ") +
+        ValueConverter.shared.getTemp(for: weatherForecastModel.feelsLike) +
+        "º"
         let windDirection = CommonFunctions().getWindDirection(for: weatherForecastModel.windDeg)
         self.windLabel.text = ValueConverter.shared.getWindSpeed(for: weatherForecastModel.windSpeed) + " " + windDirection
         self.rainLabel.text = String(Int(weatherForecastModel.probabilityOfPrecipitation * 100)) + "%"

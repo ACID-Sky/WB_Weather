@@ -89,7 +89,7 @@ class XLineDayVisualView: UIView {
         let timeForecast = Date(timeIntervalSince1970: forecast.dateOfForecast)
         let dateFormatter = DateFormatter()
         dateFormatter.timeZone = TimeZone(secondsFromGMT: Int(forecast.location?.currentWeather?.timezone ?? 0))
-        dateFormatter.locale = Locale(identifier: ValueConverter.shared.getLocal())
+        dateFormatter.locale = Locale(identifier: NSLocalizedString("dateFormatter.locale", comment: "dateFormatter locale"))
         dateFormatter.dateFormat = ValueConverter.shared.getFormat(timeStyleShort: true)
 
         let timeLabel = self.setupWeatherLabel(with: dateFormatter.string(from: timeForecast))

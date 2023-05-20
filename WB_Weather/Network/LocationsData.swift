@@ -49,7 +49,7 @@ struct FeatureMember: Decodable {
 }
 
 struct GeoObject: Decodable {
-    let description: String
+    let description: String?
     let name: String
     let point: Point
 

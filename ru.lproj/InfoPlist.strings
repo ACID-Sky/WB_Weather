@@ -1,0 +1,8 @@
+/* 
+  InfoPlist.strings
+  WB_Weather
+
+  Created by Лёха Небесный on 19.05.2023.
+  
+*/
+"NSLocationWhenInUseUsageDescription" = "Пожалуйста, разрешите доступ к вашей геолокации для возможности показывать погоду в регионе, где вы находитесь.";

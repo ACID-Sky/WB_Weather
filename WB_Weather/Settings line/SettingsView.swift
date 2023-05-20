@@ -43,7 +43,7 @@ class SettingsView: UIView {
         self.mainLabel.textColor = .black
         self.mainLabel.font = UIFont.systemFont(ofSize: 20, weight: .medium)
         self.mainLabel.textAlignment = .left
-        self.mainLabel.text = "Settings"
+        self.mainLabel.text = NSLocalizedString("SettingsView.mainLabel.text", comment: "Settings")
 
         self.addSubview(self.mainLabel)
 
@@ -81,13 +81,13 @@ class SettingsView: UIView {
         let noticeOn = userDefaults.bool(forKey: "noticeOn")
 
         self.temperatureInFahrenheit = SwitcherButton(
-            firstPositionName: "F",
-            secondPositionName: "C",
+            firstPositionName: NSLocalizedString("SettingsView.temperatureInFahrenheit.first", comment: "F"),
+            secondPositionName: NSLocalizedString("SettingsView.temperatureInFahrenheit.second", comment: "C"),
             selectedFirstPosition: temperatureInFahrenheit
         )
         self.windSpeedInMi = SwitcherButton(
-            firstPositionName: "Mi",
-            secondPositionName: "Km",
+            firstPositionName: NSLocalizedString("SettingsView.windSpeedInMi.first", comment: "Mi"),
+            secondPositionName: NSLocalizedString("SettingsView.windSpeedInMi.second", comment: "Km"),
             selectedFirstPosition: windSpeedInMi
         )
         self.timeFormat12 = SwitcherButton(
@@ -96,15 +96,15 @@ class SettingsView: UIView {
             selectedFirstPosition: timeFormat12
         )
         self.noticeOn = SwitcherButton(
-            firstPositionName: "On",
-            secondPositionName: "Off",
+            firstPositionName: NSLocalizedString("SettingsView.noticeOn.first", comment: "On"),
+            secondPositionName: NSLocalizedString("SettingsView.noticeOn.second", comment: "Off"),
             selectedFirstPosition: noticeOn
         )
 
-        self.setupParam(with: "Temperature", switcher: self.temperatureInFahrenheit)
-        self.setupParam(with: "Wind speed", switcher: self.windSpeedInMi)
-        self.setupParam(with: "Time format", switcher: self.timeFormat12)
-        self.setupParam(with: "Notifications", switcher: self.noticeOn)
+        self.setupParam(with: NSLocalizedString("SettingsView.temperature", comment: "Temperature"), switcher: self.temperatureInFahrenheit)
+        self.setupParam(with: NSLocalizedString("SettingsView.windSpeed", comment: "Wind speed"), switcher: self.windSpeedInMi)
+        self.setupParam(with: NSLocalizedString("SettingsView.timeFormat", comment: "Time format"), switcher: self.timeFormat12)
+        self.setupParam(with: NSLocalizedString("SettingsView.notifications", comment: "Notifications"), switcher: self.noticeOn)
     }
 
     private func setupParam(with text: String, switcher: SwitcherButton?){
@@ -132,7 +132,7 @@ class SettingsView: UIView {
 
     private func setupButton() {
 
-        self.button.setTitle("Save", for: .normal)
+        self.button.setTitle(NSLocalizedString("SettingsView.button.title", comment: "Save"), for: .normal)
         self.button.setTitleColor(.systemBackground, for: .normal)
         self.button.backgroundColor = .systemOrange
         self.button.translatesAutoresizingMaskIntoConstraints = false
