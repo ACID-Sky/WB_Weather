@@ -28,7 +28,7 @@ class DailyForecastCollectionViewCell: UICollectionViewCell {
         self.setupRightLabel()
         self.setupMinMaxTemperetureLabel()
 
-        self.contentView.backgroundColor = #colorLiteral(red: 0.9146655202, green: 0.9332792163, blue: 0.9809073806, alpha: 1)
+        self.contentView.backgroundColor = Palette.cellBackgroundColor
     }
 
     required init?(coder: NSCoder) {
@@ -57,7 +57,7 @@ class DailyForecastCollectionViewCell: UICollectionViewCell {
 
     private func setupDateLabel() {
         self.dateLabel.clipsToBounds = true
-        self.dateLabel.textColor = .systemGray
+        self.dateLabel.textColor = Palette.cellTextColor
         self.dateLabel.textAlignment = .center
         self.dateLabel.font = UIFont.systemFont(ofSize: 14, weight: .medium)
 
@@ -86,7 +86,7 @@ class DailyForecastCollectionViewCell: UICollectionViewCell {
 
     private func setupRainLabel() {
         self.rainLabel.clipsToBounds = true
-        self.rainLabel.textColor = #colorLiteral(red: 0.1243816391, green: 0.3047915697, blue: 0.7813428044, alpha: 1)
+        self.rainLabel.textColor = Palette.cellTextColor
         self.rainLabel.font = UIFont.systemFont(ofSize: 14, weight: .medium)
 
         self.infoStackView.addArrangedSubview(self.rainLabel)
@@ -95,7 +95,7 @@ class DailyForecastCollectionViewCell: UICollectionViewCell {
     private func setupDayForecastLabel() {
         self.dayForecastLabel.translatesAutoresizingMaskIntoConstraints = false
         self.dayForecastLabel.clipsToBounds = true
-        self.dayForecastLabel.textColor = .black
+        self.dayForecastLabel.textColor = Palette.cellTextColor
         self.dayForecastLabel.font = UIFont.systemFont(ofSize: 18, weight: .regular)
         self.dayForecastLabel.textAlignment = .left
 
@@ -111,7 +111,7 @@ class DailyForecastCollectionViewCell: UICollectionViewCell {
     private func setupMinMaxTemperetureLabel() {
         self.minMaxTemperetureLabel.translatesAutoresizingMaskIntoConstraints = false
         self.minMaxTemperetureLabel.clipsToBounds = true
-        self.minMaxTemperetureLabel.textColor = .black
+        self.minMaxTemperetureLabel.textColor = Palette.cellTextColor
         self.minMaxTemperetureLabel.font = UIFont.systemFont(ofSize: 16, weight: .semibold)
         self.minMaxTemperetureLabel.textAlignment = .right
 
@@ -128,7 +128,7 @@ class DailyForecastCollectionViewCell: UICollectionViewCell {
         self.rightLabel.translatesAutoresizingMaskIntoConstraints = false
         self.rightLabel.clipsToBounds = true
         self.rightLabel.text = "➤"
-        self.rightLabel.textColor = .black
+        self.rightLabel.textColor = Palette.cellTextColor
         self.rightLabel.font = UIFont.systemFont(ofSize: 14, weight: .bold)
 
         self.contentView.addSubview(self.rightLabel)

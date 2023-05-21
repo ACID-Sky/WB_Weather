@@ -15,7 +15,7 @@ final class DayVisualView: UIView {
 
     init() {
         super.init(frame: .zero)
-        self.backgroundColor = #colorLiteral(red: 0.9146655202, green: 0.9332792163, blue: 0.9809073806, alpha: 1)
+        self.backgroundColor = Palette.cellBackgroundColor
         self.setupGrathScrollView()
     }
 

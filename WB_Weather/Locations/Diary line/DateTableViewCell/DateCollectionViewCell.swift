@@ -24,6 +24,7 @@ class DateCollectionViewCell: UICollectionViewCell {
         self.dayLabel.clipsToBounds = true
         self.dayLabel.isUserInteractionEnabled = true
         self.dayLabel.font = UIFont.systemFont(ofSize: 18, weight: .semibold)
+        self.dayLabel.textColor = Palette.textColor
 
         self.contentView.addSubview(self.dayLabel)
 

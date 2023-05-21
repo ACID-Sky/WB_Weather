@@ -34,6 +34,7 @@ final class DetailsView: UIView {
         self.label.isUserInteractionEnabled = true
         self.label.text = "DetailsView.label.text".localized
         self.label.font = UIFont.systemFont(ofSize: 14, weight: .regular)
+        self.label.textColor = Palette.textColor
 
         self.addSubview(self.label)
 

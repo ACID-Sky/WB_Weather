@@ -33,7 +33,8 @@ class ListOfLocationsViewController: UIViewController {
     private func setupShowOnMapButton() {
         let title = "ListOfLocationsViewController.showOnMapButton.setTitle".localized
         self.showOnMapButton.translatesAutoresizingMaskIntoConstraints = false
-        self.showOnMapButton.backgroundColor = #colorLiteral(red: 0.1248925701, green: 0.3067729473, blue: 0.781540215, alpha: 1)
+        self.showOnMapButton.backgroundColor = Palette.buttonBackgroundColor
+        self.showOnMapButton.setTitleColor(Palette.buttonTextColor, for: .normal)
         self.showOnMapButton.setTitle(title, for: .normal)
         self.showOnMapButton.addTarget(self, action:  #selector(showPointOnMap), for: .touchUpInside)
 
@@ -47,8 +48,8 @@ class ListOfLocationsViewController: UIViewController {
         ])
 
         self.showOnMapButton.layer.cornerRadius = 8
-        self.showOnMapButton.layer.borderWidth = 0.5
-        self.showOnMapButton.layer.borderColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
+        self.showOnMapButton.layer.borderWidth = 1
+        self.showOnMapButton.layer.borderColor = Palette.borderColor.cgColor
     }
 
     private func setupTableView() {

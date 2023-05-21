@@ -68,6 +68,7 @@ final class DiaryViewController: UIViewController {
         self.label.isUserInteractionEnabled = true
         self.label.text = self.location.locationName
         self.label.font = UIFont.systemFont(ofSize: 20, weight: .medium)
+        self.label.textColor = Palette.textColor
 
         self.rootView.addSubview(self.label)
 

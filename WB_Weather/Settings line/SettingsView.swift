@@ -26,7 +26,7 @@ class SettingsView: UIView {
 
     init() {
         super.init(frame: .zero)
-        self.backgroundColor = #colorLiteral(red: 0.9146655202, green: 0.9332792163, blue: 0.9809073806, alpha: 1)
+        self.backgroundColor = Palette.cellBackgroundColor
         self.setupMainLabel()
         self.setupVerticalStack()
         self.setupButton()
@@ -40,7 +40,7 @@ class SettingsView: UIView {
     private func setupMainLabel() {
         self.mainLabel.translatesAutoresizingMaskIntoConstraints = false
         self.mainLabel.clipsToBounds = true
-        self.mainLabel.textColor = .black
+        self.mainLabel.textColor = Palette.cellTextColor
         self.mainLabel.font = UIFont.systemFont(ofSize: 20, weight: .medium)
         self.mainLabel.textAlignment = .left
         self.mainLabel.text = "SettingsView.mainLabel.text".localized
@@ -118,7 +118,7 @@ class SettingsView: UIView {
 
         let label = UILabel()
         label.clipsToBounds = true
-        label.textColor = .gray
+        label.textColor = Palette.cellTextColor
         label.font = UIFont.systemFont(ofSize: 16, weight: .regular)
         label.textAlignment = .left
         label.text = text
@@ -133,8 +133,9 @@ class SettingsView: UIView {
     private func setupButton() {
 
         self.button.setTitle("SettingsView.button.title".localized, for: .normal)
-        self.button.setTitleColor(.systemBackground, for: .normal)
-        self.button.backgroundColor = .systemOrange
+        self.button.setTitleColor(.white, for: .normal)
+        self.button.backgroundColor = Palette.buttonBackgroundColor
+        self.button.setTitleColor(Palette.buttonTextColor, for: .normal)
         self.button.translatesAutoresizingMaskIntoConstraints = false
         self.button.addTarget(self, action:  #selector(buttonTapped), for: .touchUpInside)
 

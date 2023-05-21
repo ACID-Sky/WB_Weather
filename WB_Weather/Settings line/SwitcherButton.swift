@@ -42,7 +42,7 @@ final class SwitcherButton: UIView {
         self.firstButton.translatesAutoresizingMaskIntoConstraints = false
         self.firstButton.isEnabled = false
         self.firstButton.setTitle(name, for: .normal)
-        self.firstButton.setTitleColor(.black, for: .normal)
+//        self.firstButton.setTitleColor(#colorLiteral(red: 0.2823529412, green: 0.06666666667, blue: 0.4509803922, alpha: 1), for: .normal)
 
         self.addSubview(self.firstButton)
 
@@ -59,7 +59,7 @@ final class SwitcherButton: UIView {
         self.secondButton.translatesAutoresizingMaskIntoConstraints = false
         self.secondButton.isEnabled = false
         self.secondButton.setTitle(name, for: .normal)
-        self.secondButton.setTitleColor(.black, for: .normal)
+//        self.secondButton.setTitleColor(#colorLiteral(red: 0.2823529412, green: 0.06666666667, blue: 0.4509803922, alpha: 1), for: .normal)
 
         self.addSubview(self.secondButton)
 
@@ -73,11 +73,15 @@ final class SwitcherButton: UIView {
 
     private func setupPossition() {
         if self.selectedFirstPosition {
-            self.firstButton.backgroundColor = #colorLiteral(red: 0.1248925701, green: 0.3067729473, blue: 0.781540215, alpha: 1)
-            self.secondButton.backgroundColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
+            self.firstButton.backgroundColor = Palette.buttonBackgroundColor
+            self.firstButton.setTitleColor(Palette.buttonTextColor, for: .normal)
+            self.secondButton.backgroundColor = Palette.secondButtonBackground
+            self.secondButton.setTitleColor(Palette.secontButtonText, for: .normal)
         } else {
-            self.firstButton.backgroundColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
-            self.secondButton.backgroundColor = #colorLiteral(red: 0.1248925701, green: 0.3067729473, blue: 0.781540215, alpha: 1)
+            self.firstButton.backgroundColor = Palette.secondButtonBackground
+            self.firstButton.setTitleColor(Palette.secontButtonText, for: .normal)
+            self.secondButton.backgroundColor = Palette.buttonBackgroundColor
+            self.secondButton.setTitleColor(Palette.buttonTextColor, for: .normal)
         }
     }
 
