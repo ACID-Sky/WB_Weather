@@ -61,7 +61,7 @@ class XLineDayVisualView: UIView {
         let weatherLabel = UILabel()
         weatherLabel.clipsToBounds = true
         weatherLabel.text = text
-        weatherLabel.textColor = .black
+        weatherLabel.textColor = UIColor(named: "cellTextColor")
         weatherLabel.font = UIFont.systemFont(ofSize: 14, weight: .regular)
         weatherLabel.textAlignment = .left
         return weatherLabel
@@ -89,7 +89,7 @@ class XLineDayVisualView: UIView {
         let timeForecast = Date(timeIntervalSince1970: forecast.dateOfForecast)
         let dateFormatter = DateFormatter()
         dateFormatter.timeZone = TimeZone(secondsFromGMT: Int(forecast.location?.currentWeather?.timezone ?? 0))
-        dateFormatter.locale = Locale(identifier: NSLocalizedString("dateFormatter.locale", comment: "dateFormatter locale"))
+        dateFormatter.locale = Locale(identifier: "dateFormatter.locale".localized)
         dateFormatter.dateFormat = ValueConverter.shared.getFormat(timeStyleShort: true)
 
         let timeLabel = self.setupWeatherLabel(with: dateFormatter.string(from: timeForecast))

@@ -47,6 +47,7 @@ final class DateTableViewCell: UITableViewCell {
     private func setupCollectionView(){
         self.collectionView.dataSource = self
         self.collectionView.delegate = self
+        self.collectionView.backgroundColor = .clear
         self.collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: Constants.defaultCellID)
         self.collectionView.register(DateCollectionViewCell.self, forCellWithReuseIdentifier: Constants.dayForCellID)
         self.collectionView.showsHorizontalScrollIndicator = false
@@ -96,13 +97,13 @@ extension DateTableViewCell: UICollectionViewDataSource {
         )
         let backGround = {
             if self.dayIndex == indexPath.row {
-                return #colorLiteral(red: 0.1248925701, green: 0.3067729473, blue: 0.781540215, alpha: 1)
+                return UIColor(named: "selectedCellBackgroundColor")
             } else {
                 return .clear
             }
         }()
 
-        cell.setup(with: dayForecast.dateText, bgColor: backGround )
+        cell.setup(with: dayForecast.dateText, bgColor: backGround ?? .white)
             cell.layer.cornerRadius = 6
             cell.clipsToBounds = true
             return cell

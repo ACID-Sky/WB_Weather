@@ -48,10 +48,10 @@ final class DiaryViewController: UIViewController {
     }
 
     private func setupView() {
-        self.navigationItem.title = NSLocalizedString("DiaryViewController.navigationItem.title", comment: "Diary weather report") 
-        self.view.backgroundColor = #colorLiteral(red: 0.1248925701, green: 0.3067729473, blue: 0.781540215, alpha: 1)
+        self.navigationItem.title = "DiaryViewController.navigationItem.title".localized
+        self.view = BackgroundView(frame: self.view.frame)
         self.rootView.translatesAutoresizingMaskIntoConstraints = false
-        self.rootView.backgroundColor = .systemBackground
+        self.rootView.backgroundColor = .clear
         self.view.addSubview(rootView)
 
         NSLayoutConstraint.activate([
@@ -68,6 +68,7 @@ final class DiaryViewController: UIViewController {
         self.label.isUserInteractionEnabled = true
         self.label.text = self.location.locationName
         self.label.font = UIFont.systemFont(ofSize: 20, weight: .medium)
+        self.label.textColor = UIColor(named: "textColor")
 
         self.rootView.addSubview(self.label)
 

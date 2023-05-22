@@ -78,13 +78,17 @@ final class ShortDayInfoCollectionViewCell: UICollectionViewCell {
         let date = Date()
         let time = Date(timeIntervalSince1970: weatherForecastModel.dateOfForecast)
         if date < time + 3*1800 && date >= time - 3*1800 {
-            self.contentView.backgroundColor = #colorLiteral(red: 0.1248925701, green: 0.3067729473, blue: 0.781540215, alpha: 1)
+            self.contentView.backgroundColor = UIColor(named: "selectedCellBackgroundColor")
+            self.timeLabel.textColor = UIColor(named: "selectedCellTextColor")
+            self.degresLabel.textColor = UIColor(named: "selectedCellTextColor")
         } else {
-            self.contentView.backgroundColor = .clear
+            self.contentView.backgroundColor = UIColor(named: "cellBackgroundColor")
+            self.timeLabel.textColor = UIColor(named: "cellTextColor")
+            self.degresLabel.textColor = UIColor(named: "cellTextColor")
         }
         let dateFormatter = DateFormatter()
         dateFormatter.timeZone = TimeZone(secondsFromGMT: Int(weatherForecastModel.location?.currentWeather?.timezone ?? 0))
-        dateFormatter.locale = Locale(identifier: NSLocalizedString("dateFormatter.locale", comment: "dateFormatter locale"))
+        dateFormatter.locale = Locale(identifier: "dateFormatter.locale".localized)
         dateFormatter.dateFormat = ValueConverter.shared.getFormat(timeStyleShort: true)
 
         self.timeLabel.text = dateFormatter.string(from: time)

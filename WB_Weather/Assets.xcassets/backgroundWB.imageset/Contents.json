@@ -1,17 +1,50 @@
 {
   "images" : [
     {
-      "filename" : "#cb11ab#990099#481173_1920_1080 1.png",
+      "filename" : "light background.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "#cb11ab#990099#481173_1920_1080 2.png",
+      "appearances" : [
+        {
+          "appearance" : "luminosity",
+          "value" : "dark"
+        }
+      ],
+      "filename" : "gradient_darckViolet_black.png",
+      "idiom" : "universal",
+      "scale" : "1x"
+    },
+    {
+      "filename" : "light background 1.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "#cb11ab#990099#481173_1920_1080.png",
+      "appearances" : [
+        {
+          "appearance" : "luminosity",
+          "value" : "dark"
+        }
+      ],
+      "filename" : "gradient_darckViolet_black 1.png",
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
+      "filename" : "light background 2.png",
+      "idiom" : "universal",
+      "scale" : "3x"
+    },
+    {
+      "appearances" : [
+        {
+          "appearance" : "luminosity",
+          "value" : "dark"
+        }
+      ],
+      "filename" : "gradient_darckViolet_black 2.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

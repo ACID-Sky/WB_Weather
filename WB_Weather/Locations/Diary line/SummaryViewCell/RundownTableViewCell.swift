@@ -25,7 +25,7 @@ class RundownTableViewCell: UITableViewCell {
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        self.backgroundColor = #colorLiteral(red: 0.9146655202, green: 0.9332792163, blue: 0.9809073806, alpha: 1)
+        self.backgroundColor = UIColor(named: "cellBackgroundColor")
         self.setupTimeOfDayLabel()
         self.setupVerticalStackView()
         self.setupLabels()
@@ -39,7 +39,7 @@ class RundownTableViewCell: UITableViewCell {
         self.timeOfDayLabel.translatesAutoresizingMaskIntoConstraints = false
         self.timeOfDayLabel.clipsToBounds = true
         self.timeOfDayLabel.text = "Day"
-        self.timeOfDayLabel.textColor = .black
+        self.timeOfDayLabel.textColor = UIColor(named: "cellTextColor")
         self.timeOfDayLabel.textAlignment = .center
         self.timeOfDayLabel.font = UIFont.systemFont(ofSize: 14, weight: .medium)
 
@@ -88,14 +88,14 @@ class RundownTableViewCell: UITableViewCell {
     private func setupWeatherImage() {
         self.weatherImageView.clipsToBounds = true
         self.weatherImageView.contentMode = .scaleAspectFit
-        self.weatherImageView.tintColor = #colorLiteral(red: 0.1248925701, green: 0.3067729473, blue: 0.781540215, alpha: 1)
+        self.weatherImageView.tintColor = UIColor(named: "cellTextColor")
 
         self.horizontalStackView.addArrangedSubview(self.weatherImageView)
     }
 
     private func setupTempLabel() {
         self.tempLabel.clipsToBounds = true
-        self.tempLabel.textColor = .black
+        self.tempLabel.textColor = UIColor(named: "cellTextColor")
         self.tempLabel.font = UIFont.systemFont(ofSize: 20, weight: .medium)
 
         self.horizontalStackView.addArrangedSubview(self.tempLabel)
@@ -103,7 +103,7 @@ class RundownTableViewCell: UITableViewCell {
 
     private func setupDayForecastLabel() {
         self.dayForecastLabel.clipsToBounds = true
-        self.dayForecastLabel.textColor = .black
+        self.dayForecastLabel.textColor = UIColor(named: "cellTextColor")
         self.dayForecastLabel.font = UIFont.systemFont(ofSize: 20, weight: .regular)
         self.dayForecastLabel.textAlignment = .center
 
@@ -114,26 +114,11 @@ class RundownTableViewCell: UITableViewCell {
 
         let paramsArray = [
             (label: self.dayForecastLabel, imageName: "", descriptionText: ""),
-            (label: self.feelsLabel, imageName: "Feels like", descriptionText: NSLocalizedString(
-                "RundownTableViewCell.feelsLabel",
-                comment: "Feels like"
-            )),
-            (label: self.windLabel, imageName:  "windcolor", descriptionText: NSLocalizedString(
-                "RundownTableViewCell.windLabel",
-                comment: "Wind"
-            )),
-            (label: self.ufIndexLabel, imageName: "Sun", descriptionText: NSLocalizedString(
-                "RundownTableViewCell.ufIndexLabel",
-                comment: "UV index"
-            )),
-            (label: self.rainLabel, imageName: "rain", descriptionText: NSLocalizedString(
-                "RundownTableViewCell.rainLabel",
-                comment: "Possibility of rain"
-            )),
-            (label: self.cloudyLabel, imageName: "cloudBlue", descriptionText: NSLocalizedString(
-                "RundownTableViewCell.cloudyLabel",
-                comment: "Cloudiness"
-            ))
+            (label: self.feelsLabel, imageName: "Feels like", descriptionText: "RundownTableViewCell.feelsLabel".localized),
+            (label: self.windLabel, imageName:  "windcolor", descriptionText: "RundownTableViewCell.windLabel".localized),
+            (label: self.ufIndexLabel, imageName: "Sun", descriptionText: "RundownTableViewCell.ufIndexLabel".localized),
+            (label: self.rainLabel, imageName: "rain", descriptionText: "RundownTableViewCell.rainLabel".localized),
+            (label: self.cloudyLabel, imageName: "cloudBlue", descriptionText: "RundownTableViewCell.cloudyLabel".localized)
         ]
 
         for (index, params) in paramsArray.enumerated() {
@@ -164,7 +149,7 @@ class RundownTableViewCell: UITableViewCell {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.clipsToBounds = true
         label.text = "Day"
-        label.textColor = .black
+        label.textColor = UIColor(named: "cellTextColor")
         label.textAlignment = .right
         label.font = UIFont.systemFont(ofSize: 14, weight: .medium)
 
@@ -183,7 +168,7 @@ class RundownTableViewCell: UITableViewCell {
         let descriptionLabel = UILabel()
         descriptionLabel.translatesAutoresizingMaskIntoConstraints = false
         descriptionLabel.clipsToBounds = true
-        descriptionLabel.textColor = .black
+        descriptionLabel.textColor = UIColor(named: "cellTextColor")
         descriptionLabel.font = UIFont.systemFont(ofSize: 14, weight: .medium)
         descriptionLabel.text = description
 
@@ -191,7 +176,7 @@ class RundownTableViewCell: UITableViewCell {
 
         let blueLineView = UIView()
         blueLineView.translatesAutoresizingMaskIntoConstraints = false
-        blueLineView.backgroundColor = #colorLiteral(red: 0.1248925701, green: 0.3067729473, blue: 0.781540215, alpha: 1)
+        blueLineView.backgroundColor = UIColor(named: "cellTextColor")
 
         self.contentView.addSubview(blueLineView)
 
@@ -221,7 +206,7 @@ extension RundownTableViewCell {
     /// Передача прогноза погоды для установки значений в ячейке
     /// - Parameter forecast: Прогноза средней погоды за часть дня
     func setupForecast(with forecast: Forecast){
-        let forecastText = NSLocalizedString(forecast.groupOfWeather.rawValue, comment: "groupOfWeather.___")
+        let forecastText = forecast.groupOfWeather.rawValue.localized
         self.timeOfDayLabel.text = forecast.partOfDay
         self.weatherImageView.image = forecast.groupOfWeatherImage
         self.tempLabel.text = forecast.temText

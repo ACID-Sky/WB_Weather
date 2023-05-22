@@ -26,7 +26,7 @@ class SettingsView: UIView {
 
     init() {
         super.init(frame: .zero)
-        self.backgroundColor = #colorLiteral(red: 0.9146655202, green: 0.9332792163, blue: 0.9809073806, alpha: 1)
+        self.backgroundColor = UIColor(named: "cellBackgroundColor")
         self.setupMainLabel()
         self.setupVerticalStack()
         self.setupButton()
@@ -40,10 +40,10 @@ class SettingsView: UIView {
     private func setupMainLabel() {
         self.mainLabel.translatesAutoresizingMaskIntoConstraints = false
         self.mainLabel.clipsToBounds = true
-        self.mainLabel.textColor = .black
+        self.mainLabel.textColor = UIColor(named: "cellTextColor")
         self.mainLabel.font = UIFont.systemFont(ofSize: 20, weight: .medium)
         self.mainLabel.textAlignment = .left
-        self.mainLabel.text = NSLocalizedString("SettingsView.mainLabel.text", comment: "Settings")
+        self.mainLabel.text = "SettingsView.mainLabel.text".localized
 
         self.addSubview(self.mainLabel)
 
@@ -81,13 +81,13 @@ class SettingsView: UIView {
         let noticeOn = userDefaults.bool(forKey: "noticeOn")
 
         self.temperatureInFahrenheit = SwitcherButton(
-            firstPositionName: NSLocalizedString("SettingsView.temperatureInFahrenheit.first", comment: "F"),
-            secondPositionName: NSLocalizedString("SettingsView.temperatureInFahrenheit.second", comment: "C"),
+            firstPositionName: "SettingsView.temperatureInFahrenheit.first".localized,
+            secondPositionName: "SettingsView.temperatureInFahrenheit.second".localized,
             selectedFirstPosition: temperatureInFahrenheit
         )
         self.windSpeedInMi = SwitcherButton(
-            firstPositionName: NSLocalizedString("SettingsView.windSpeedInMi.first", comment: "Mi"),
-            secondPositionName: NSLocalizedString("SettingsView.windSpeedInMi.second", comment: "Km"),
+            firstPositionName: "SettingsView.windSpeedInMi.first".localized,
+            secondPositionName: "SettingsView.windSpeedInMi.second".localized,
             selectedFirstPosition: windSpeedInMi
         )
         self.timeFormat12 = SwitcherButton(
@@ -96,15 +96,15 @@ class SettingsView: UIView {
             selectedFirstPosition: timeFormat12
         )
         self.noticeOn = SwitcherButton(
-            firstPositionName: NSLocalizedString("SettingsView.noticeOn.first", comment: "On"),
-            secondPositionName: NSLocalizedString("SettingsView.noticeOn.second", comment: "Off"),
+            firstPositionName: "SettingsView.noticeOn.first".localized,
+            secondPositionName: "SettingsView.noticeOn.second".localized,
             selectedFirstPosition: noticeOn
         )
 
-        self.setupParam(with: NSLocalizedString("SettingsView.temperature", comment: "Temperature"), switcher: self.temperatureInFahrenheit)
-        self.setupParam(with: NSLocalizedString("SettingsView.windSpeed", comment: "Wind speed"), switcher: self.windSpeedInMi)
-        self.setupParam(with: NSLocalizedString("SettingsView.timeFormat", comment: "Time format"), switcher: self.timeFormat12)
-        self.setupParam(with: NSLocalizedString("SettingsView.notifications", comment: "Notifications"), switcher: self.noticeOn)
+        self.setupParam(with: "SettingsView.temperature".localized, switcher: self.temperatureInFahrenheit)
+        self.setupParam(with: "SettingsView.windSpeed".localized, switcher: self.windSpeedInMi)
+        self.setupParam(with: "SettingsView.timeFormat".localized, switcher: self.timeFormat12)
+        self.setupParam(with: "SettingsView.notifications".localized, switcher: self.noticeOn)
     }
 
     private func setupParam(with text: String, switcher: SwitcherButton?){
@@ -118,7 +118,7 @@ class SettingsView: UIView {
 
         let label = UILabel()
         label.clipsToBounds = true
-        label.textColor = .gray
+        label.textColor = UIColor(named: "cellTextColor")
         label.font = UIFont.systemFont(ofSize: 16, weight: .regular)
         label.textAlignment = .left
         label.text = text
@@ -132,9 +132,10 @@ class SettingsView: UIView {
 
     private func setupButton() {
 
-        self.button.setTitle(NSLocalizedString("SettingsView.button.title", comment: "Save"), for: .normal)
-        self.button.setTitleColor(.systemBackground, for: .normal)
-        self.button.backgroundColor = .systemOrange
+        self.button.setTitle("SettingsView.button.title".localized, for: .normal)
+        self.button.setTitleColor(.white, for: .normal)
+        self.button.backgroundColor = UIColor(named: "buttonBackgroundColor")
+        self.button.setTitleColor(UIColor(named: "buttonTextColor"), for: .normal)
         self.button.translatesAutoresizingMaskIntoConstraints = false
         self.button.addTarget(self, action:  #selector(buttonTapped), for: .touchUpInside)
 
@@ -147,7 +148,9 @@ class SettingsView: UIView {
             self.button.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -35),
         ])
 
-        self.button.layer.cornerRadius = 10
+        self.button.layer.cornerRadius = 8
+        self.button.layer.borderWidth = 1
+        self.button.layer.borderColor = UIColor(named: "borderColor")?.cgColor
     }
 
     @objc private func buttonTapped () {

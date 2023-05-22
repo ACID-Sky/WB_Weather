@@ -24,7 +24,7 @@ final class TimeForecastTableViewCell: UITableViewCell {
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        self.backgroundColor = #colorLiteral(red: 0.9146655202, green: 0.9332792163, blue: 0.9809073806, alpha: 1)
+        self.backgroundColor = UIColor(named: "cellBackgroundColor")
         self.setupDayLabel()
         self.setupTimeAndTempVerticalStack()
         self.setupParamsHorizontalStack()
@@ -39,7 +39,7 @@ final class TimeForecastTableViewCell: UITableViewCell {
         self.dayLabel.translatesAutoresizingMaskIntoConstraints = false
         self.dayLabel.clipsToBounds = true
         self.dayLabel.text = "dw DD/MM"
-        self.dayLabel.textColor = .black
+        self.dayLabel.textColor = UIColor(named: "cellTextColor")
         self.dayLabel.font = UIFont.systemFont(ofSize: 20, weight: .medium)
         self.dayLabel.textAlignment = .left
 
@@ -99,7 +99,7 @@ final class TimeForecastTableViewCell: UITableViewCell {
     private func setupTimeLabel() {
         self.timeLabel.clipsToBounds = true
         self.timeLabel.text = "12:00"
-        self.timeLabel.textColor = .systemGray
+        self.timeLabel.textColor = UIColor(named: "cellTextColor")
         self.timeLabel.textAlignment = .left
         self.timeLabel.font = UIFont.systemFont(ofSize: 14, weight: .regular)
 
@@ -109,7 +109,7 @@ final class TimeForecastTableViewCell: UITableViewCell {
     private func setupCurrentTempLabel() {
         self.currentTempLabel.clipsToBounds = true
         self.currentTempLabel.text = "00º"
-        self.currentTempLabel.textColor = .black
+        self.currentTempLabel.textColor = UIColor(named: "cellTextColor")
         self.currentTempLabel.textAlignment = .left
         self.currentTempLabel.font = UIFont.systemFont(ofSize: 20, weight: .medium)
 
@@ -144,7 +144,7 @@ final class TimeForecastTableViewCell: UITableViewCell {
     private func setupWeatherLabel(with text: String) -> UILabel {
         let weatherLabel = UILabel()
         weatherLabel.clipsToBounds = true
-        weatherLabel.textColor = .black
+        weatherLabel.textColor = UIColor(named: "cellTextColor")
         weatherLabel.text = text
         weatherLabel.font = UIFont.systemFont(ofSize: 14, weight: .regular)
         weatherLabel.textAlignment = .left
@@ -173,13 +173,13 @@ final class TimeForecastTableViewCell: UITableViewCell {
 
         self.dayForecastLabel.clipsToBounds = true
         self.dayForecastLabel.text = "It could rain a lot"
-        self.dayForecastLabel.textColor = .black
+        self.dayForecastLabel.textColor = UIColor(named: "cellTextColor")
         self.dayForecastLabel.font = UIFont.systemFont(ofSize: 14, weight: .regular)
         self.dayForecastLabel.textAlignment = .left
 
-        let windLabel = self.setupWeatherLabel(with: NSLocalizedString("forecast.wind", comment: "Wind"))
-        let rainLabel = self.setupWeatherLabel(with: NSLocalizedString("forecast.rainfall", comment: "Rainfall"))
-        let cloudLabel = self.setupWeatherLabel(with: NSLocalizedString("forecast.cloudy", comment: "Cloudy"))
+        let windLabel = self.setupWeatherLabel(with: "forecast.wind".localized)
+        let rainLabel = self.setupWeatherLabel(with: "forecast.rainfall".localized)
+        let cloudLabel = self.setupWeatherLabel(with: "forecast.cloudy".localized)
 
         stack.addArrangedSubview(self.dayForecastLabel)
         stack.addArrangedSubview(windLabel)
@@ -195,25 +195,25 @@ final class TimeForecastTableViewCell: UITableViewCell {
 
         self.feelsLikeLabel.clipsToBounds = true
         self.feelsLikeLabel.text = "Feels like 0º"
-        self.feelsLikeLabel.textColor = .black
+        self.feelsLikeLabel.textColor = UIColor(named: "cellTextColor")
         self.feelsLikeLabel.font = UIFont.systemFont(ofSize: 14, weight: .regular)
         self.feelsLikeLabel.textAlignment = .right
 
         self.windLabel.clipsToBounds = true
         self.windLabel.text = ValueConverter.shared.getWindSpeed(for: 3 ) + " NNW"
-        self.windLabel.textColor = .systemGray
+        self.windLabel.textColor = UIColor(named: "cellTextColor")
         self.windLabel.font = UIFont.systemFont(ofSize: 14, weight: .regular)
         self.windLabel.textAlignment = .right
 
         self.rainLabel.clipsToBounds = true
         self.rainLabel.text = "50%"
-        self.rainLabel.textColor = .systemGray
+        self.rainLabel.textColor = UIColor(named: "cellTextColor")
         self.rainLabel.font = UIFont.systemFont(ofSize: 14, weight: .regular)
         self.rainLabel.textAlignment = .right
 
         self.cloudyLabel.clipsToBounds = true
         self.cloudyLabel.text = "50%"
-        self.cloudyLabel.textColor = .systemGray
+        self.cloudyLabel.textColor = UIColor(named: "cellTextColor")
         self.cloudyLabel.font = UIFont.systemFont(ofSize: 14, weight: .regular)
         self.cloudyLabel.textAlignment = .right
 
@@ -228,7 +228,7 @@ final class TimeForecastTableViewCell: UITableViewCell {
     private func setupBlueLineView() {
         let blueLineView = UIView()
         blueLineView.translatesAutoresizingMaskIntoConstraints = false
-        blueLineView.backgroundColor = #colorLiteral(red: 0.1248925701, green: 0.3067729473, blue: 0.781540215, alpha: 1)
+        blueLineView.backgroundColor = UIColor(named: "cellTextColor")
 
         self.contentView.addSubview(blueLineView)
 
@@ -254,7 +254,7 @@ extension TimeForecastTableViewCell {
         let time = Date(timeIntervalSince1970: weatherForecastModel.dateOfForecast)
         let dateFormatter = DateFormatter()
         dateFormatter.timeZone = TimeZone(secondsFromGMT: timezone)
-        dateFormatter.locale = Locale(identifier: NSLocalizedString("dateFormatter.locale", comment: "dateFormatter locale"))
+        dateFormatter.locale = Locale(identifier: "dateFormatter.locale".localized)
         dateFormatter.dateFormat = ValueConverter.shared.getFormat(timeStyleShort: true)
         self.timeLabel.text = dateFormatter.string(from: time)
 
@@ -266,7 +266,7 @@ extension TimeForecastTableViewCell {
 
         self.currentTempLabel.text = ValueConverter.shared.getTemp(for: weatherForecastModel.temp) + "º"
         self.dayForecastLabel.text = weatherForecastModel.weatherDescription
-        self.feelsLikeLabel.text = NSLocalizedString("forecast.feelsLike", comment: "Feels like ") +
+        self.feelsLikeLabel.text = "forecast.feelsLike".localized +
         ValueConverter.shared.getTemp(for: weatherForecastModel.feelsLike) +
         "º"
         let windDirection = CommonFunctions().getWindDirection(for: weatherForecastModel.windDeg)

@@ -21,7 +21,7 @@ class ListOfLocationsViewController: UIViewController {
     init(){
         super.init(nibName: nil, bundle: nil)
         self.view.alpha = 0.95
-        self.view.backgroundColor = #colorLiteral(red: 0.1248925701, green: 0.3067729473, blue: 0.781540215, alpha: 1)
+        self.view = BackgroundView()
         self.setupShowOnMapButton()
         self.setupTableView()
     }
@@ -31,9 +31,10 @@ class ListOfLocationsViewController: UIViewController {
     }
 
     private func setupShowOnMapButton() {
-        let title = NSLocalizedString("ListOfLocationsViewController.showOnMapButton.setTitle", comment: "Show locations on the map")
+        let title = "ListOfLocationsViewController.showOnMapButton.setTitle".localized
         self.showOnMapButton.translatesAutoresizingMaskIntoConstraints = false
-        self.showOnMapButton.backgroundColor = #colorLiteral(red: 0.1248925701, green: 0.3067729473, blue: 0.781540215, alpha: 1)
+        self.showOnMapButton.backgroundColor = UIColor(named: "buttonBackgroundColor")
+        self.showOnMapButton.setTitleColor(UIColor(named: "buttonTextColor"), for: .normal)
         self.showOnMapButton.setTitle(title, for: .normal)
         self.showOnMapButton.addTarget(self, action:  #selector(showPointOnMap), for: .touchUpInside)
 
@@ -47,8 +48,8 @@ class ListOfLocationsViewController: UIViewController {
         ])
 
         self.showOnMapButton.layer.cornerRadius = 8
-        self.showOnMapButton.layer.borderWidth = 0.5
-        self.showOnMapButton.layer.borderColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
+        self.showOnMapButton.layer.borderWidth = 1
+        self.showOnMapButton.layer.borderColor = UIColor(named: "borderColor")?.cgColor
     }
 
     private func setupTableView() {
@@ -116,7 +117,7 @@ extension ListOfLocationsViewController: UITableViewDelegate {
         guard let deletedLocation = self.coreDataLocationService.getObject(index: locationIndex) else { return nil}
         guard deletedLocation.locationID != 0 else { return nil}
 
-        let title = NSLocalizedString("delete.button", comment: "Delete")
+        let title = "delete.button".localized
         
         let deleteAction = UIContextualAction(style: .destructive, title: title) { _, _, _ in
             self.coreDataLocationService.deleteLocation(for: deletedLocation.locationID)

@@ -37,7 +37,7 @@ final class CityHeadView: UIView {
 
     init(location: Locations) {
         super.init(frame: .zero)
-        self.backgroundColor = #colorLiteral(red: 0.1248925701, green: 0.3067729473, blue: 0.781540215, alpha: 1)
+        self.backgroundColor = UIColor(named: "selectedCellBackgroundColor")
         self.coreDataLocationService = CoreDataLocationServiceImp(delegate: self, locationID: location.id)
         self.setupEllipseImage()
         self.setupSunriseImage()
@@ -93,7 +93,7 @@ final class CityHeadView: UIView {
         self.sunriseLabel.textAlignment = .center
         self.sunriseLabel.numberOfLines = 2
         self.sunriseLabel.text = "HH:MM"
-        self.sunriseLabel.textColor = .systemBackground
+        self.sunriseLabel.textColor = UIColor(named: "textColor")
         self.sunriseLabel.font = UIFont.systemFont(ofSize: 14, weight: .bold)
 
         self.addSubview(self.sunriseLabel)
@@ -126,7 +126,7 @@ final class CityHeadView: UIView {
         self.sunsetLabel.textAlignment = .center
         self.sunsetLabel.numberOfLines = 2
         self.sunsetLabel.text = "HH:MM"
-        self.sunsetLabel.textColor = .systemBackground
+        self.sunsetLabel.textColor = UIColor(named: "textColor")
         self.sunsetLabel.font = UIFont.systemFont(ofSize: 14, weight: .bold)
 
         self.addSubview(self.sunsetLabel)
@@ -165,7 +165,7 @@ final class CityHeadView: UIView {
         self.minMaxTemperetureLabel.translatesAutoresizingMaskIntoConstraints = false
         self.minMaxTemperetureLabel.clipsToBounds = true
         self.minMaxTemperetureLabel.text = "minº/maxº"
-        self.minMaxTemperetureLabel.textColor = .systemBackground
+        self.minMaxTemperetureLabel.textColor = UIColor(named: "textColor")
         self.minMaxTemperetureLabel.font = UIFont.systemFont(ofSize: 18, weight: .semibold)
         self.minMaxTemperetureLabel.textAlignment = .center
 
@@ -176,7 +176,7 @@ final class CityHeadView: UIView {
         self.currentTemperetureLabel.translatesAutoresizingMaskIntoConstraints = false
         self.currentTemperetureLabel.clipsToBounds = true
         self.currentTemperetureLabel.text = "Currentº"
-        self.currentTemperetureLabel.textColor = .systemBackground
+        self.currentTemperetureLabel.textColor = UIColor(named: "textColor")
         self.currentTemperetureLabel.font = UIFont.systemFont(ofSize: 30, weight: .heavy)
         self.currentTemperetureLabel.textAlignment = .center
 
@@ -187,7 +187,7 @@ final class CityHeadView: UIView {
         self.dayForecastLabel.translatesAutoresizingMaskIntoConstraints = false
         self.dayForecastLabel.clipsToBounds = true
         self.dayForecastLabel.text = "It could rain a lot"
-        self.dayForecastLabel.textColor = .systemBackground
+        self.dayForecastLabel.textColor = UIColor(named: "textColor")
         self.dayForecastLabel.font = UIFont.systemFont(ofSize: 18, weight: .medium)
         self.dayForecastLabel.textAlignment = .center
 
@@ -223,7 +223,7 @@ final class CityHeadView: UIView {
         self.cloudssunLabel.translatesAutoresizingMaskIntoConstraints = false
         self.cloudssunLabel.clipsToBounds = true
         self.cloudssunLabel.text = "10%"
-        self.cloudssunLabel.textColor = .systemBackground
+        self.cloudssunLabel.textColor = UIColor(named: "textColor")
         self.cloudssunLabel.font = UIFont.systemFont(ofSize: 14, weight: .medium)
 
         self.infoStackView.addArrangedSubview(self.cloudssunLabel)
@@ -242,7 +242,7 @@ final class CityHeadView: UIView {
         self.windcolorLabel.translatesAutoresizingMaskIntoConstraints = false
         self.windcolorLabel.clipsToBounds = true
         self.windcolorLabel.text = ValueConverter.shared.getWindSpeed(for: 3)
-        self.windcolorLabel.textColor = .systemBackground
+        self.windcolorLabel.textColor = UIColor(named: "textColor")
         self.windcolorLabel.font = UIFont.systemFont(ofSize: 14, weight: .medium)
 
         self.infoStackView.addArrangedSubview(self.windcolorLabel)
@@ -261,7 +261,7 @@ final class CityHeadView: UIView {
         self.rainLabel.translatesAutoresizingMaskIntoConstraints = false
         self.rainLabel.clipsToBounds = true
         self.rainLabel.text = "75%"
-        self.rainLabel.textColor = .systemBackground
+        self.rainLabel.textColor = UIColor(named: "textColor")
         self.rainLabel.font = UIFont.systemFont(ofSize: 14, weight: .medium)
 
         self.infoStackView.addArrangedSubview(self.rainLabel)
@@ -271,7 +271,7 @@ final class CityHeadView: UIView {
         self.currentDateAndTimeLabel.translatesAutoresizingMaskIntoConstraints = false
         self.currentDateAndTimeLabel.clipsToBounds = true
         self.currentDateAndTimeLabel.text = "HH:MM, dw DD month"
-        self.currentDateAndTimeLabel.textColor = .yellow
+        self.currentDateAndTimeLabel.textColor = UIColor(named: "textColor")
         self.currentDateAndTimeLabel.font = UIFont.systemFont(ofSize: 18, weight: .semibold)
 
         self.addSubview(self.currentDateAndTimeLabel)
@@ -292,7 +292,7 @@ final class CityHeadView: UIView {
         let dateFormatter = DateFormatter()
         
         dateFormatter.timeZone = TimeZone(secondsFromGMT: Int(forecast.timezone))
-        dateFormatter.locale = Locale(identifier: NSLocalizedString("dateFormatter.locale", comment: "dateFormatter locale"))
+        dateFormatter.locale = Locale(identifier: "dateFormatter.locale".localized)
         dateFormatter.dateFormat = ValueConverter.shared.getFormat(timeStyleShort: true)
 
         self.sunriseLabel.text = dateFormatter.string(from: surise)

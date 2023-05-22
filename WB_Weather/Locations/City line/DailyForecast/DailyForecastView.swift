@@ -101,7 +101,9 @@ extension DailyForecastView: UICollectionViewDataSource {
 
         cell.setup(for: dayForecast)
         cell.layer.cornerRadius = 8
+        cell.layer.borderWidth = 1
         cell.clipsToBounds = true
+        cell.layer.borderColor = UIColor(named: "borderColor")?.cgColor
         return cell
     }
 }
