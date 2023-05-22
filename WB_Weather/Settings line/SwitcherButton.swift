@@ -42,7 +42,6 @@ final class SwitcherButton: UIView {
         self.firstButton.translatesAutoresizingMaskIntoConstraints = false
         self.firstButton.isEnabled = false
         self.firstButton.setTitle(name, for: .normal)
-//        self.firstButton.setTitleColor(#colorLiteral(red: 0.2823529412, green: 0.06666666667, blue: 0.4509803922, alpha: 1), for: .normal)
 
         self.addSubview(self.firstButton)
 
@@ -59,7 +58,6 @@ final class SwitcherButton: UIView {
         self.secondButton.translatesAutoresizingMaskIntoConstraints = false
         self.secondButton.isEnabled = false
         self.secondButton.setTitle(name, for: .normal)
-//        self.secondButton.setTitleColor(#colorLiteral(red: 0.2823529412, green: 0.06666666667, blue: 0.4509803922, alpha: 1), for: .normal)
 
         self.addSubview(self.secondButton)
 
@@ -73,15 +71,15 @@ final class SwitcherButton: UIView {
 
     private func setupPossition() {
         if self.selectedFirstPosition {
-            self.firstButton.backgroundColor = Palette.buttonBackgroundColor
-            self.firstButton.setTitleColor(Palette.buttonTextColor, for: .normal)
-            self.secondButton.backgroundColor = Palette.secondButtonBackground
-            self.secondButton.setTitleColor(Palette.secontButtonText, for: .normal)
+            self.firstButton.backgroundColor = UIColor(named: "buttonBackgroundColor")
+            self.firstButton.setTitleColor(UIColor(named: "buttonTextColor"), for: .normal)
+            self.secondButton.backgroundColor = UIColor(named: "secondButtonBackground")
+            self.secondButton.setTitleColor(UIColor(named: "secontButtonText"), for: .normal)
         } else {
-            self.firstButton.backgroundColor = Palette.secondButtonBackground
-            self.firstButton.setTitleColor(Palette.secontButtonText, for: .normal)
-            self.secondButton.backgroundColor = Palette.buttonBackgroundColor
-            self.secondButton.setTitleColor(Palette.buttonTextColor, for: .normal)
+            self.firstButton.backgroundColor = UIColor(named: "secondButtonBackground")
+            self.firstButton.setTitleColor(UIColor(named: "secontButtonText"), for: .normal)
+            self.secondButton.backgroundColor = UIColor(named: "buttonBackgroundColor")
+            self.secondButton.setTitleColor(UIColor(named: "buttonTextColor"), for: .normal)
         }
     }
 

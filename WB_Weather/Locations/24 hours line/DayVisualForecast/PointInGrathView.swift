@@ -48,11 +48,11 @@ class PointInGrathView: UIView {
 
     private func setupParams(){
         self.pointImageView.translatesAutoresizingMaskIntoConstraints = false
-        self.pointImageView.tintColor = Palette.cellTextColor
+        self.pointImageView.tintColor = UIColor(named: "cellTextColor")
 
         self.label.translatesAutoresizingMaskIntoConstraints = false
         self.label.text = ValueConverter.shared.getTemp(for: Double(currentTemp)) + "º"
-        self.label.textColor = Palette.cellTextColor
+        self.label.textColor = UIColor(named: "cellTextColor")
         self.label.font = UIFont.systemFont(ofSize: 12, weight: .regular)
         self.label.textAlignment = .left
 
@@ -84,7 +84,7 @@ class PointInGrathView: UIView {
         let grathLayer = CAShapeLayer()
         grathLayer.path = grathPath.cgPath
         grathLayer.fillColor = UIColor.clear.cgColor
-        grathLayer.strokeColor = Palette.cellTextColor.cgColor
+        grathLayer.strokeColor = UIColor(named: "cellTextColor")?.cgColor
         grathLayer.lineWidth = 1
         grathLayer.strokeEnd = 1
 
@@ -101,7 +101,7 @@ class PointInGrathView: UIView {
         let zeroLineLayer = CAShapeLayer()
         zeroLineLayer.path = zeroLinePath.cgPath
         zeroLineLayer.fillColor = UIColor.clear.cgColor
-        zeroLineLayer.strokeColor = Palette.cellTextColor.cgColor
+        zeroLineLayer.strokeColor = UIColor(named: "cellTextColor")?.cgColor
         zeroLineLayer.lineWidth = 0.5
         zeroLineLayer.lineDashPattern = [6, 3]
         zeroLineLayer.strokeEnd = 1

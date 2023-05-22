@@ -97,13 +97,13 @@ extension DateTableViewCell: UICollectionViewDataSource {
         )
         let backGround = {
             if self.dayIndex == indexPath.row {
-                return Palette.selectedCellBackgroundColor
+                return UIColor(named: "selectedCellBackgroundColor")
             } else {
                 return .clear
             }
         }()
 
-        cell.setup(with: dayForecast.dateText, bgColor: backGround )
+        cell.setup(with: dayForecast.dateText, bgColor: backGround ?? .white)
             cell.layer.cornerRadius = 6
             cell.clipsToBounds = true
             return cell

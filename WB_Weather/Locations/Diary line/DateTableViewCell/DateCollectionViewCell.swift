@@ -24,7 +24,7 @@ class DateCollectionViewCell: UICollectionViewCell {
         self.dayLabel.clipsToBounds = true
         self.dayLabel.isUserInteractionEnabled = true
         self.dayLabel.font = UIFont.systemFont(ofSize: 18, weight: .semibold)
-        self.dayLabel.textColor = Palette.textColor
+        self.dayLabel.textColor = UIColor(named: "textColor")
 
         self.contentView.addSubview(self.dayLabel)
 
@@ -45,5 +45,13 @@ extension DateCollectionViewCell{
     func setup(with name: String, bgColor: UIColor) {
         self.dayLabel.text = name
         self.backgroundColor = bgColor
+        if bgColor != .clear {
+            self.layer.cornerRadius = 8
+            self.layer.borderWidth = 1
+            self.layer.borderColor = UIColor(named: "borderColor")?.cgColor
+        }else{
+            self.layer.cornerRadius = 0
+            self.layer.borderWidth = 0
+        }
     }
 }

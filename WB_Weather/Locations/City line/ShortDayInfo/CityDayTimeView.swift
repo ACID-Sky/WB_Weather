@@ -81,7 +81,7 @@ extension CityDayTimeView: UICollectionViewDataSource {
         let width = collectionView.frame.width - Constants.spacing * (Constants.numberOfShowTime - 1)
         let itemWidth = width / Constants.numberOfShowTime
         cell.layer.cornerRadius = itemWidth/2
-        cell.layer.borderColor = Palette.borderColor.cgColor
+        cell.layer.borderColor = UIColor(named: "borderColor")?.cgColor
         cell.layer.borderWidth = 0.5
         cell.clipsToBounds = true
         return cell

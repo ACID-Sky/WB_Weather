@@ -22,7 +22,7 @@ class EmptyViewController: UIViewController {
         self.image.clipsToBounds = true
         self.image.isUserInteractionEnabled = true
         self.image.image = UIImage(systemName: "location.slash.circle")
-        self.image.tintColor = Palette.cellBackgroundColor
+        self.image.tintColor = UIColor(named: "cellBackgroundColor")
 
         self.view.addSubview(self.image)
 

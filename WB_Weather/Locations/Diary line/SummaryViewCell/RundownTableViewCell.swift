@@ -25,7 +25,7 @@ class RundownTableViewCell: UITableViewCell {
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        self.backgroundColor = Palette.cellBackgroundColor
+        self.backgroundColor = UIColor(named: "cellBackgroundColor")
         self.setupTimeOfDayLabel()
         self.setupVerticalStackView()
         self.setupLabels()
@@ -39,7 +39,7 @@ class RundownTableViewCell: UITableViewCell {
         self.timeOfDayLabel.translatesAutoresizingMaskIntoConstraints = false
         self.timeOfDayLabel.clipsToBounds = true
         self.timeOfDayLabel.text = "Day"
-        self.timeOfDayLabel.textColor = Palette.cellTextColor
+        self.timeOfDayLabel.textColor = UIColor(named: "cellTextColor")
         self.timeOfDayLabel.textAlignment = .center
         self.timeOfDayLabel.font = UIFont.systemFont(ofSize: 14, weight: .medium)
 
@@ -88,14 +88,14 @@ class RundownTableViewCell: UITableViewCell {
     private func setupWeatherImage() {
         self.weatherImageView.clipsToBounds = true
         self.weatherImageView.contentMode = .scaleAspectFit
-        self.weatherImageView.tintColor = Palette.cellTextColor
+        self.weatherImageView.tintColor = UIColor(named: "cellTextColor")
 
         self.horizontalStackView.addArrangedSubview(self.weatherImageView)
     }
 
     private func setupTempLabel() {
         self.tempLabel.clipsToBounds = true
-        self.tempLabel.textColor = Palette.cellTextColor
+        self.tempLabel.textColor = UIColor(named: "cellTextColor")
         self.tempLabel.font = UIFont.systemFont(ofSize: 20, weight: .medium)
 
         self.horizontalStackView.addArrangedSubview(self.tempLabel)
@@ -103,7 +103,7 @@ class RundownTableViewCell: UITableViewCell {
 
     private func setupDayForecastLabel() {
         self.dayForecastLabel.clipsToBounds = true
-        self.dayForecastLabel.textColor = Palette.cellTextColor
+        self.dayForecastLabel.textColor = UIColor(named: "cellTextColor")
         self.dayForecastLabel.font = UIFont.systemFont(ofSize: 20, weight: .regular)
         self.dayForecastLabel.textAlignment = .center
 
@@ -149,7 +149,7 @@ class RundownTableViewCell: UITableViewCell {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.clipsToBounds = true
         label.text = "Day"
-        label.textColor = Palette.cellTextColor
+        label.textColor = UIColor(named: "cellTextColor")
         label.textAlignment = .right
         label.font = UIFont.systemFont(ofSize: 14, weight: .medium)
 
@@ -168,7 +168,7 @@ class RundownTableViewCell: UITableViewCell {
         let descriptionLabel = UILabel()
         descriptionLabel.translatesAutoresizingMaskIntoConstraints = false
         descriptionLabel.clipsToBounds = true
-        descriptionLabel.textColor = Palette.cellTextColor
+        descriptionLabel.textColor = UIColor(named: "cellTextColor")
         descriptionLabel.font = UIFont.systemFont(ofSize: 14, weight: .medium)
         descriptionLabel.text = description
 
@@ -176,7 +176,7 @@ class RundownTableViewCell: UITableViewCell {
 
         let blueLineView = UIView()
         blueLineView.translatesAutoresizingMaskIntoConstraints = false
-        blueLineView.backgroundColor = Palette.cellTextColor
+        blueLineView.backgroundColor = UIColor(named: "cellTextColor")
 
         self.contentView.addSubview(blueLineView)
 

@@ -45,10 +45,9 @@ final class WeatherViewController: UIPageViewController {
 
     /// Устанавливает фон, кнопки в навигейшнвью и pageController
     private func setupView() {
-        self.view.backgroundColor = Palette.selectedCellBackgroundColor
+        self.view.backgroundColor = UIColor(named: "selectedCellBackgroundColor")
         self.navigationItem.title = "WeatherViewController.navigationItem.title".localized
-        self.navigationItem.titleView?.tintColor = Palette.textColor
-        self.navigationController?.navigationBar.tintColor = Palette.textColor //???
+        self.navigationController?.navigationBar.tintColor = UIColor(named: "textColor")
 
         let leftBarButton = UIBarButtonItem(
             image: UIImage(systemName: "text.alignright"),
@@ -85,8 +84,8 @@ final class WeatherViewController: UIPageViewController {
             20
         ))
 
-        self.pageControl.currentPageIndicatorTintColor = Palette.textColor
-        self.pageControl.pageIndicatorTintColor = Palette.cellBackgroundColor
+        self.pageControl.currentPageIndicatorTintColor = UIColor(named: "buttonBackgroundColor")
+        self.pageControl.pageIndicatorTintColor = UIColor(named: "secondButtonBackground")
         self.pageControl.numberOfPages = self.coreDataLocationService?.getNubersObject(section: 0) ?? 1
         self.pageControl.currentPage = 0
         self.navigationController?.navigationBar.addSubview(pageControl)

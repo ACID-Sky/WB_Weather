@@ -14,8 +14,6 @@ final class MapViewController: UIViewController {
 
     private let cLLocationManager = CLLocationManager()
     private lazy var mapView = MKMapView()
-//    private lazy var buttonWithMenuMapType = UIButton()
-//    private lazy var buttonWithMenuRouteType = UIButton()
     private lazy var label = UILabel()
 
     private lazy var transportType: MKDirectionsTransportType = .any
@@ -58,7 +56,7 @@ final class MapViewController: UIViewController {
         self.label.translatesAutoresizingMaskIntoConstraints = false
         self.label.clipsToBounds = true
         self.label.numberOfLines = 0
-        self.label.textColor = Palette.textColor
+        self.label.textColor = UIColor(named: "textColor")
         self.label.font = UIFont.systemFont(ofSize: 16, weight: .medium)
         self.label.textAlignment = .left
         self.label.text  = text
@@ -73,12 +71,17 @@ final class MapViewController: UIViewController {
         ])
     }
 
+    /// Создаём кнопку с меню
+    /// - Parameters:
+    ///   - menu: меню для создаваемой кнопки
+    ///   - title: текст на кнопке
+    ///   - left: распаложена слева - true; справа - false
     private func setButton(with menu: UIMenu, title: String, left: Bool) {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.backgroundColor = Palette.buttonBackgroundColor
+        button.backgroundColor = UIColor(named: "buttonBackgroundColor")
         button.setTitle(title, for: .normal)
-        button.setTitleColor(Palette.buttonTextColor, for: .normal)
+        button.setTitleColor(UIColor(named: "buttonTextColor"), for: .normal)
         button.showsMenuAsPrimaryAction = true
         button.menu = menu
 
@@ -108,7 +111,7 @@ final class MapViewController: UIViewController {
 
         button.layer.cornerRadius = 8
         button.layer.borderWidth = 1
-        button.layer.borderColor = Palette.borderColor.cgColor
+        button.layer.borderColor = UIColor(named: "borderColor")?.cgColor
     }
 
     private func setupButtonWithMenuMapType() {
@@ -135,25 +138,6 @@ final class MapViewController: UIViewController {
         let menuMapType = UIMenu(title: title, children: elements)
 
         self.setButton(with: menuMapType, title: title, left: true)
-//        self.buttonWithMenuMapType.translatesAutoresizingMaskIntoConstraints = false
-//        self.buttonWithMenuMapType.backgroundColor = Palette.buttonBackgroundColor
-//        self.buttonWithMenuMapType.setTitle(title, for: .normal)
-//        self.buttonWithMenuMapType.setTitleColor(Palette.buttonTextColor, for: .normal)
-//        self.buttonWithMenuMapType.showsMenuAsPrimaryAction = true
-//        self.buttonWithMenuMapType.menu = menuMapType
-//
-//        self.view.addSubview(self.buttonWithMenuMapType)
-//
-//        NSLayoutConstraint.activate([
-//            self.buttonWithMenuMapType.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 16),
-//            self.buttonWithMenuMapType.trailingAnchor.constraint(equalTo: self.view.centerXAnchor, constant: -8),
-//            self.buttonWithMenuMapType.bottomAnchor.constraint(equalTo: self.label.topAnchor, constant: -16),
-//            self.buttonWithMenuMapType.heightAnchor.constraint(equalToConstant: 40)
-//        ])
-//
-//        self.buttonWithMenuMapType.layer.cornerRadius = 8
-//        self.buttonWithMenuMapType.layer.borderWidth = 1
-//        self.buttonWithMenuMapType.layer.borderColor = Palette.borderColor
     }
 
     private func setupButtonWithMenuRouteType() {
@@ -181,25 +165,6 @@ final class MapViewController: UIViewController {
         let menuRouteType = UIMenu(title: title, children: elements)
 
         self.setButton(with: menuRouteType, title: title, left: false)
-
-//        self.buttonWithMenuRouteType.translatesAutoresizingMaskIntoConstraints = false
-//        self.buttonWithMenuRouteType.backgroundColor = #colorLiteral(red: 0.7960784314, green: 0.06666666667, blue: 0.6705882353, alpha: 1)
-//        self.buttonWithMenuRouteType.setTitle(title, for: .normal)
-//        self.buttonWithMenuRouteType.showsMenuAsPrimaryAction = true
-//        self.buttonWithMenuRouteType.menu = menuRouteType
-//
-//        self.view.addSubview(self.buttonWithMenuRouteType)
-//
-//        NSLayoutConstraint.activate([
-//            self.buttonWithMenuRouteType.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -16),
-//            self.buttonWithMenuRouteType.leadingAnchor.constraint(equalTo: self.view.centerXAnchor, constant: 8),
-//            self.buttonWithMenuRouteType.bottomAnchor.constraint(equalTo: self.label.topAnchor, constant: -16),
-//            self.buttonWithMenuRouteType.heightAnchor.constraint(equalToConstant: 40)
-//        ])
-//
-//        self.buttonWithMenuRouteType.layer.cornerRadius = 8
-//        self.buttonWithMenuRouteType.layer.borderWidth = 0.5
-//        self.buttonWithMenuRouteType.layer.borderColor = #colorLiteral(red: 0.2823529412, green: 0.06666666667, blue: 0.4509803922, alpha: 1)
     }
 
     private func setupMapView() {

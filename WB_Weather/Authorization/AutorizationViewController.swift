@@ -57,7 +57,7 @@ final class AutorizationViewController: UIViewController {
         self.fistlabel.numberOfLines = 0
         self.fistlabel.text = "AutorizationViewController.fistlabel.text".localized
         self.fistlabel.font = UIFont.systemFont(ofSize: 16, weight: .semibold)
-        self.fistlabel.textColor = Palette.textColor
+        self.fistlabel.textColor = UIColor(named: "textColor")
 
         self.view.addSubview(self.fistlabel)
 
@@ -76,7 +76,7 @@ final class AutorizationViewController: UIViewController {
         self.secondLabel.numberOfLines = 0
         self.secondLabel.text = "AutorizationViewController.secondLabel.text".localized
         self.secondLabel.font = UIFont.systemFont(ofSize: 14, weight: .regular)
-        self.secondLabel.textColor = Palette.textColor
+        self.secondLabel.textColor = UIColor(named: "textColor")
 
         self.view.addSubview(self.secondLabel)
 
@@ -91,8 +91,8 @@ final class AutorizationViewController: UIViewController {
     private func setupAcceptButton() {
         let text = "AutorizationViewController.acceptButton.setTitle".localized
         self.acceptButton.setTitle(text, for: .normal)
-        self.acceptButton.setTitleColor(Palette.buttonTextColor, for: .normal)
-        self.acceptButton.backgroundColor = Palette.buttonBackgroundColor
+        self.acceptButton.setTitleColor(UIColor(named: "buttonTextColor"), for: .normal)
+        self.acceptButton.backgroundColor = UIColor(named: "buttonBackgroundColor")
         self.acceptButton.translatesAutoresizingMaskIntoConstraints = false
         self.acceptButton.addTarget(self, action:  #selector(buttonTapped), for: .touchUpInside)
 
@@ -107,7 +107,7 @@ final class AutorizationViewController: UIViewController {
 
         self.acceptButton.layer.cornerRadius = 10
         self.acceptButton.layer.borderWidth = 1
-        self.acceptButton.layer.borderColor = Palette.borderColor.cgColor
+        self.acceptButton.layer.borderColor = UIColor(named: "borderColor")?.cgColor
     }
 
     private func setupRefusalLabel() {
@@ -116,7 +116,7 @@ final class AutorizationViewController: UIViewController {
         self.refusalLabel.isUserInteractionEnabled = true
         self.refusalLabel.text = "AutorizationViewController.refusalLabel.text".localized
         self.refusalLabel.font = UIFont.systemFont(ofSize: 14, weight: .semibold)
-        self.refusalLabel.textColor = Palette.textColor
+        self.refusalLabel.textColor = UIColor(named: "textColor")
 
         self.view.addSubview(self.refusalLabel)
 

@@ -26,7 +26,7 @@ class SettingsView: UIView {
 
     init() {
         super.init(frame: .zero)
-        self.backgroundColor = Palette.cellBackgroundColor
+        self.backgroundColor = UIColor(named: "cellBackgroundColor")
         self.setupMainLabel()
         self.setupVerticalStack()
         self.setupButton()
@@ -40,7 +40,7 @@ class SettingsView: UIView {
     private func setupMainLabel() {
         self.mainLabel.translatesAutoresizingMaskIntoConstraints = false
         self.mainLabel.clipsToBounds = true
-        self.mainLabel.textColor = Palette.cellTextColor
+        self.mainLabel.textColor = UIColor(named: "cellTextColor")
         self.mainLabel.font = UIFont.systemFont(ofSize: 20, weight: .medium)
         self.mainLabel.textAlignment = .left
         self.mainLabel.text = "SettingsView.mainLabel.text".localized
@@ -118,7 +118,7 @@ class SettingsView: UIView {
 
         let label = UILabel()
         label.clipsToBounds = true
-        label.textColor = Palette.cellTextColor
+        label.textColor = UIColor(named: "cellTextColor")
         label.font = UIFont.systemFont(ofSize: 16, weight: .regular)
         label.textAlignment = .left
         label.text = text
@@ -134,8 +134,8 @@ class SettingsView: UIView {
 
         self.button.setTitle("SettingsView.button.title".localized, for: .normal)
         self.button.setTitleColor(.white, for: .normal)
-        self.button.backgroundColor = Palette.buttonBackgroundColor
-        self.button.setTitleColor(Palette.buttonTextColor, for: .normal)
+        self.button.backgroundColor = UIColor(named: "buttonBackgroundColor")
+        self.button.setTitleColor(UIColor(named: "buttonTextColor"), for: .normal)
         self.button.translatesAutoresizingMaskIntoConstraints = false
         self.button.addTarget(self, action:  #selector(buttonTapped), for: .touchUpInside)
 
@@ -148,7 +148,9 @@ class SettingsView: UIView {
             self.button.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -35),
         ])
 
-        self.button.layer.cornerRadius = 10
+        self.button.layer.cornerRadius = 8
+        self.button.layer.borderWidth = 1
+        self.button.layer.borderColor = UIColor(named: "borderColor")?.cgColor
     }
 
     @objc private func buttonTapped () {

@@ -15,7 +15,7 @@ class LocationTableViewCell: UITableViewCell {
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        self.backgroundColor = Palette.cellBackgroundColor
+        self.backgroundColor = UIColor(named: "cellBackgroundColor")
         self.setupView()
         self.setupParams()
     }
@@ -27,7 +27,7 @@ class LocationTableViewCell: UITableViewCell {
     private func setupView() {
         self.layer.cornerRadius = 8
         self.layer.borderWidth = 0.5
-        self.layer.borderColor = Palette.borderColor.cgColor
+        self.layer.borderColor = UIColor(named: "borderColor")?.cgColor
         self.clipsToBounds = true
     }
 
@@ -35,13 +35,13 @@ class LocationTableViewCell: UITableViewCell {
         self.locationimageView.translatesAutoresizingMaskIntoConstraints = false
         self.locationimageView.clipsToBounds = true
         self.locationimageView.contentMode = .center
-        self.locationimageView.tintColor = Palette.cellTextColor
+        self.locationimageView.tintColor = UIColor(named: "cellTextColor")
 
         self.contentView.addSubview(self.locationimageView)
 
         self.locationNameLabel.translatesAutoresizingMaskIntoConstraints = false
         self.locationNameLabel.clipsToBounds = true
-        self.locationNameLabel.textColor = Palette.cellTextColor
+        self.locationNameLabel.textColor = UIColor(named: "cellTextColor")
         self.locationNameLabel.font = UIFont.systemFont(ofSize: 16, weight: .medium)
         self.locationNameLabel.textAlignment = .left
 

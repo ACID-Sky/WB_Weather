@@ -22,9 +22,9 @@ let line = UIView()
     }
 
     private func setupComponents() {
-        self.point.backgroundColor =  Palette.cellTextColor
+        self.point.backgroundColor =  UIColor(named: "cellTextColor")
         self.point.translatesAutoresizingMaskIntoConstraints = false
-        self.line.backgroundColor =  Palette.cellTextColor
+        self.line.backgroundColor =  UIColor(named: "cellTextColor")
         self.line.translatesAutoresizingMaskIntoConstraints = false
 
         self.addSubview(self.point)

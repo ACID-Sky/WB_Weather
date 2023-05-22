@@ -36,7 +36,7 @@ final class DailyForecastHeadView: UIView {
         self.label.isUserInteractionEnabled = true
         self.label.text = "DailyForecastHeadView.label.text".localized
         self.label.font = UIFont.systemFont(ofSize: 14, weight: .semibold)
-        self.label.textColor = Palette.textColor
+        self.label.textColor = UIColor(named: "textColor")
 
         self.addSubview(self.label)
 
@@ -53,7 +53,7 @@ final class DailyForecastHeadView: UIView {
         self.daysLabel.isUserInteractionEnabled = true
         self.daysLabel.text = "25" + "days".localized
         self.daysLabel.font = UIFont.systemFont(ofSize: 14, weight: .regular)
-        self.daysLabel.textColor = Palette.textColor
+        self.daysLabel.textColor = UIColor(named: "textColor")
 
         self.addSubview(self.daysLabel)
 

@@ -61,7 +61,7 @@ class XLineDayVisualView: UIView {
         let weatherLabel = UILabel()
         weatherLabel.clipsToBounds = true
         weatherLabel.text = text
-        weatherLabel.textColor = Palette.cellTextColor
+        weatherLabel.textColor = UIColor(named: "cellTextColor")
         weatherLabel.font = UIFont.systemFont(ofSize: 14, weight: .regular)
         weatherLabel.textAlignment = .left
         return weatherLabel
