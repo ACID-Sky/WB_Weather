@@ -45,7 +45,7 @@ final class WeatherViewController: UIPageViewController {
 
     /// Устанавливает фон, кнопки в навигейшнвью и pageController
     private func setupView() {
-        self.view.backgroundColor = UIColor(named: "selectedCellBackgroundColor")
+//        self.view.backgroundColor = UIColor(named: "selectedCellBackgroundColor")
         self.navigationItem.title = "WeatherViewController.navigationItem.title".localized
         self.navigationController?.navigationBar.tintColor = UIColor(named: "textColor")
 
@@ -135,9 +135,15 @@ final class WeatherViewController: UIPageViewController {
     /// - Parameter index: индекс страницы
     /// - Returns: LocationWeatherViewController or nil
     private func pageViewController(for index: Int) -> LocationWeatherViewController? {
-        if index < 0 {return nil}
+        if index < 0 {
+            self.view.backgroundColor = UIColor(named: "leftBackgroundColor")
+            return nil
+        }
         let count = self.coreDataLocationService?.getObjects()?.count ?? 0
-        guard  count > 0 && index < count  else {return nil}
+        guard  count > 0 && index < count  else {
+            self.view.backgroundColor = UIColor(named: "rightBackgroungColor")
+            return nil
+        }
 
         guard let locationModel = self.coreDataLocationService?.getObject(index: [0,index]) else {return nil}
 

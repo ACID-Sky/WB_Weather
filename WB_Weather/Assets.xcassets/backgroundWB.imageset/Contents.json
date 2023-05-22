@@ -1,7 +1,7 @@
 {
   "images" : [
     {
-      "filename" : "#cb11ab#990099#481173_1920_1080 1.png",
+      "filename" : "light background.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
@@ -17,7 +17,7 @@
       "scale" : "1x"
     },
     {
-      "filename" : "#cb11ab#990099#481173_1920_1080 2.png",
+      "filename" : "light background 1.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
@@ -33,7 +33,7 @@
       "scale" : "2x"
     },
     {
-      "filename" : "#cb11ab#990099#481173_1920_1080.png",
+      "filename" : "light background 2.png",
       "idiom" : "universal",
       "scale" : "3x"
     },
