@@ -10,7 +10,7 @@ import Foundation
 enum Requestype {
     case getGeocodeLocation
     case getCoordinate
-    case cuurentForecast
+    case curentForecast
     case daysForecast
 }
 
@@ -112,7 +112,7 @@ extension NetworkService: NetworkServicePorotocol {
                 URLQueryItem(name: "results", value: "1"),
                 URLQueryItem(name: "lang", value: "urlComponents.queryItems.geocode.lang".localized),
             ]
-        case .cuurentForecast, .daysForecast:
+        case .curentForecast, .daysForecast:
             urlComponents.host = "api.openweathermap.org"
             urlComponents.queryItems = [
                 URLQueryItem(name: "lat", value: location.locationLatitude),
@@ -132,7 +132,7 @@ extension NetworkService: NetworkServicePorotocol {
         case .getCoordinate:
             urlComponents.queryItems?.append( URLQueryItem(name: "geocode", value: location.locationName))
 
-        case .cuurentForecast:
+        case .curentForecast:
             urlComponents.path = "/data/2.5/weather"
         case .daysForecast:
             urlComponents.path = "/data/2.5/forecast"

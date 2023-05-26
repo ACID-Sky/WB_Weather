@@ -237,5 +237,4 @@ extension CoreDataLocationServiceImp: CoreDataLocationService {
             self.saveContext(context: context)
         }
     }
-
 }
