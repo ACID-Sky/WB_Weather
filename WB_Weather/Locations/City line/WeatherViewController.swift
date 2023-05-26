@@ -234,7 +234,7 @@ final class WeatherViewController: UIPageViewController {
     /// - Parameter location: локация для которой нужно получить и сохранить погоду
     private func getWeatherForecast(for location: Locations) {
 
-        let endPointForCurrent = self.networkService.urlComponentsForCoordinate(for: .cuurentForecast, location: location)
+        let endPointForCurrent = self.networkService.urlComponentsForCoordinate(for: .curentForecast, location: location)
 
         self.networkService.fetchCurrentWeather(usingEndPoint: endPointForCurrent) { result in
             switch result {
