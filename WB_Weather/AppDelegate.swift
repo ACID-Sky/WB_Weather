@@ -11,10 +11,16 @@ import CoreData
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
+    lazy var localNotificationsService: LocalNotificationsServiceProtocol = LocalNotificationsService()
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        UIApplication.shared.applicationIconBadgeNumber = 0
+        let userDefaults = UserDefaults.standard
+        if !userDefaults.bool(forKey: "noticeOff") {
+            self.localNotificationsService.registerNotification()
+        }
         return true
     }
 
@@ -78,4 +84,5 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
 }
+
 

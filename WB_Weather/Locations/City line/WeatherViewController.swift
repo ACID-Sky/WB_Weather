@@ -40,12 +40,10 @@ final class WeatherViewController: UIPageViewController {
         self.requestAccessToLocation()
         self.setupFirstController()
         self.updateLocations()
-        self.getWaetherForAllLocations()
     }
 
     /// Устанавливает фон, кнопки в навигейшнвью и pageController
     private func setupView() {
-//        self.view.backgroundColor = UIColor(named: "selectedCellBackgroundColor")
         self.navigationItem.title = "WeatherViewController.navigationItem.title".localized
         self.navigationController?.navigationBar.tintColor = UIColor(named: "textColor")
 
@@ -180,9 +178,9 @@ final class WeatherViewController: UIPageViewController {
             switch result {
             case .success(let answer):
                 guard answer.response.geoObjectCollection.featureMember.count != 0 else {
+                    self.coreDataLocationService?.deleteLocation(for: location.id)
 
                     DispatchQueue.main.async {
-                        self.coreDataLocationService?.deleteLocation(for: location.id)
                         let messageTemplate = "WeatherViewController.getGeoCode.alert.message".localized
                         let message = String(format: messageTemplate, location.locationName)
 
@@ -261,26 +259,6 @@ final class WeatherViewController: UIPageViewController {
         }
     }
 
-    /// получение прогнозов погоды для всех локаций из кор даты
-    private func getWaetherForAllLocations(){
-        guard let locations = self.coreDataLocationService?.getObjects() else {return}
-
-        for locationModel in locations {
-            let location = Locations(
-                id: locationModel.locationID,
-                locationName: locationModel.locationName ?? "Unknow Location",
-                locationLatitude: locationModel.locationLatitude ?? "0",
-                locationLongitude: locationModel.locationLongitude ?? "0"
-            )
-
-            if locationModel.locationLatitude == "lat" {
-                self.getGeoCode(requestype: .getCoordinate, location: location)
-            } else {
-                self.getWeatherForecast(for: location)
-            }
-        }
-    }
-
     private func deleteSelfLocation(){
         self.coreDataLocationService?.deleteLocation(for: 0)
     }
@@ -300,7 +278,7 @@ final class WeatherViewController: UIPageViewController {
         )
     }
 
-    /// Обновляем локации, если поменялось их название или изменилась локализация языка на устройстве
+    /// Обновляем локации, если поменялось их название или изменилась локализация языка на устройстве + обновить прогнозы
     private func updateLocations() {
         guard let locationsInCoreData = self.coreDataLocationService?.getObjects(), locationsInCoreData.isEmpty == false else {return}
 
@@ -324,7 +302,8 @@ final class WeatherViewController: UIPageViewController {
 
     /// Показываем экран настройки
     @objc private func didTapLeftButton () {
-        let vc = SettingsViewController()
+        let localNotificationService: LocalNotificationsServiceProtocol = (UIApplication.shared.delegate as? AppDelegate)?.localNotificationsService ?? LocalNotificationsService()
+        let vc = SettingsViewController(localNotificationsService: localNotificationService)
         vc.delegate = self
         let uvc = UINavigationController(rootViewController: vc)
         uvc.modalPresentationStyle = .fullScreen

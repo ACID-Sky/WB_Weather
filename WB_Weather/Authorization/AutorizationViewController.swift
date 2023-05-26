@@ -125,6 +125,7 @@ final class AutorizationViewController: UIViewController {
             self.refusalLabel.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -40),
         ])
     }
+    
     private func setupGestures() {
         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.handleTapGesture(_:)))
         tapGestureRecognizer.numberOfTapsRequired = 1
@@ -136,8 +137,6 @@ final class AutorizationViewController: UIViewController {
         self.delegate?.refusalToUseLocation()
         self.dismiss(animated: true)
     }
-
-
 
     @objc private func buttonTapped () {
         self.delegate?.openAuthorizationView()

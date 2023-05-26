@@ -112,5 +112,10 @@
 "SettingsView.temperatureInFahrenheit.second" = "Ц";
 "SettingsView.windSpeedInMi.first" = "Миль/ч";
 "SettingsView.windSpeedInMi.second" = "М/с";
-"SettingsView.noticeOn.first" = "Вкл.";
-"SettingsView.noticeOn.second" = "Откл.";
+"SettingsView.noticeOff.first" = "Вкл.";
+"SettingsView.noticeOff.second" = "Откл.";
+
+"LocalNotificationsService.notification.title" = "Пора зайти к нам.";
+"LocalNotificationsService.notification.body" = "Посмотрите, кака погода Вас ждёт сегодня. ⛅️ \nОдевайтесь по погоде и хорошего дня. 😏";
+"LocalNotificationsService.notification.action1" = "Закрыть";
+"LocalNotificationsService.notification.action2" = "Отложить на час";
