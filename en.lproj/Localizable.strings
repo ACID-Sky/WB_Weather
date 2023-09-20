@@ -111,6 +111,10 @@
 "SettingsView.temperatureInFahrenheit.second" = "C";
 "SettingsView.windSpeedInMi.first" = "MPH";
 "SettingsView.windSpeedInMi.second" = "M/S";
-"SettingsView.noticeOn.first" = "On";
-"SettingsView.noticeOn.second" = "Off";
+"SettingsView.noticeOff.first" = "On";
+"SettingsView.noticeOff.second" = "Off";
 
+"LocalNotificationsService.notification.title" = "Go to the app.";
+"LocalNotificationsService.notification.body" = "Look at the weather today. ⛅️ \nDress for the weather and have a good day. 😏";
+"LocalNotificationsService.notification.action1" = "Close";
+"LocalNotificationsService.notification.action2" = "Delayed for an hour";

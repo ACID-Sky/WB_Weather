@@ -55,6 +55,7 @@
 		76C5B9CD2A14E2DE0049F2E2 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C5B9CC2A14E2DE0049F2E2 /* MapViewController.swift */; };
 		76C5B9D12A1502A10049F2E2 /* Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C5B9D02A1502A00049F2E2 /* Alerts.swift */; };
 		76CB42ED2A0502430098C053 /* Forecast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CB42EC2A0502430098C053 /* Forecast.swift */; };
+		76E15B602A2077F30047DF7F /* LocalNotificationsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E15B5F2A2077F30047DF7F /* LocalNotificationsService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -111,6 +112,7 @@
 		76C5B9CC2A14E2DE0049F2E2 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		76C5B9D02A1502A00049F2E2 /* Alerts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alerts.swift; sourceTree = "<group>"; };
 		76CB42EC2A0502430098C053 /* Forecast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Forecast.swift; sourceTree = "<group>"; };
+		76E15B5F2A2077F30047DF7F /* LocalNotificationsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalNotificationsService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -173,6 +175,7 @@
 				76966AD229DEAF5100AEEF22 /* SettingsViewController.swift */,
 				76C5B95D2A07C42F0049F2E2 /* SettingsView.swift */,
 				76C5B95F2A0908340049F2E2 /* SwitcherButton.swift */,
+				76E15B5F2A2077F30047DF7F /* LocalNotificationsService.swift */,
 			);
 			path = "Settings line";
 			sourceTree = "<group>";
@@ -340,6 +343,8 @@
 			dependencies = (
 			);
 			name = WB_Weather;
+			packageProductDependencies = (
+			);
 			productName = WB_Weather;
 			productReference = 762428E429DAAD5600C11B54 /* WB_Weather.app */;
 			productType = "com.apple.product-type.application";
@@ -369,6 +374,8 @@
 				ru,
 			);
 			mainGroup = 762428DB29DAAD5500C11B54;
+			packageReferences = (
+			);
 			productRefGroup = 762428E529DAAD5600C11B54 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -431,6 +438,7 @@
 				76966AC729DD77AB00AEEF22 /* CityHeadView.swift in Sources */,
 				76966AC929DD77C700AEEF22 /* DetailsHeadView.swift in Sources */,
 				76C5B9672A0BA5090049F2E2 /* PointInGrathView.swift in Sources */,
+				76E15B602A2077F30047DF7F /* LocalNotificationsService.swift in Sources */,
 				76C1C6712A18D211000A8EFC /* BackgroundView.swift in Sources */,
 				76966AE729DED34E00AEEF22 /* DayViewController.swift in Sources */,
 				76C13A8E2A0246FC0075E604 /* XLinePointAndLine.swift in Sources */,

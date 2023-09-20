@@ -8,6 +8,8 @@
 import UIKit
 protocol SettingsViewDelegate: AnyObject {
     func dismissController()
+    func registerNotification()
+    func deleteNotification()
 }
 
 class SettingsView: UIView {
@@ -78,7 +80,7 @@ class SettingsView: UIView {
         let temperatureInFahrenheit = userDefaults.bool(forKey: "temperatureInFahrenheit")
         let windSpeedInMi = userDefaults.bool(forKey: "windSpeedInMi")
         let timeFormat12 = userDefaults.bool(forKey: "timeFormat12")
-        let noticeOn = userDefaults.bool(forKey: "noticeOn")
+        let noticeOff = userDefaults.bool(forKey: "noticeOff")
 
         self.temperatureInFahrenheit = SwitcherButton(
             firstPositionName: "SettingsView.temperatureInFahrenheit.first".localized,
@@ -96,9 +98,9 @@ class SettingsView: UIView {
             selectedFirstPosition: timeFormat12
         )
         self.noticeOn = SwitcherButton(
-            firstPositionName: "SettingsView.noticeOn.first".localized,
-            secondPositionName: "SettingsView.noticeOn.second".localized,
-            selectedFirstPosition: noticeOn
+            firstPositionName: "SettingsView.noticeOff.first".localized,
+            secondPositionName: "SettingsView.noticeOff.second".localized,
+            selectedFirstPosition: !noticeOff
         )
 
         self.setupParam(with: "SettingsView.temperature".localized, switcher: self.temperatureInFahrenheit)
@@ -164,8 +166,13 @@ class SettingsView: UIView {
         if self.timeFormat12?.selectedFirstPosition !=  self.userDefaults.bool(forKey: "timeFormat12") {
             self.userDefaults.setValue(self.timeFormat12?.selectedFirstPosition, forKey: "timeFormat12")
         }
-        if self.noticeOn?.selectedFirstPosition !=  self.userDefaults.bool(forKey: "noticeOn") {
-            self.userDefaults.setValue(self.noticeOn?.selectedFirstPosition, forKey: "noticeOn")
+        if self.noticeOn?.selectedFirstPosition ==  self.userDefaults.bool(forKey: "noticeOff") {
+            self.userDefaults.setValue(!(self.noticeOn?.selectedFirstPosition ?? true), forKey: "noticeOff")
+            if (self.noticeOn?.selectedFirstPosition ?? true) {
+                self.delegate?.registerNotification()
+            } else {
+                self.delegate?.deleteNotification()
+            }
         }
 
         delegate?.dismissController()
